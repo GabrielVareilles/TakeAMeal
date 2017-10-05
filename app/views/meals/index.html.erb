@@ -1,0 +1,8 @@
+<ul>
+  <% @meals.each do |m| %>
+  <li>
+  <%= cl_image_tag @product.photo, height: 200, width: 300, crop: :fill %>
+    <h2><%= m.name %></h2>
+  </li>
+  <% end %>
+</ul>
