@@ -8,6 +8,7 @@
 #
 
 
+>>>>>>> f5a5d0c6c7c4b84aea1390faf40b9dd724082836
 require "pathname"
 ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
   Pathname.new(__FILE__).realpath)
