@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-  before_action :find_cocktail, only: [ :show ]
+  before_action :find_meal, only: [ :show ]
   def index
     @meals = Meal.all
   end
