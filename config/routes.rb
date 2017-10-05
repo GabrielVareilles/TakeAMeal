@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :meals, only: [ :index, :show ]
     resources :meals do
       resources :orders, only: [ :new ]
+      resources :orders do
+        resources :reviews, only: [ :new ]
+      end
     end
   end
   resources :meals, only: [ :index ]
