@@ -1,6 +1,7 @@
 class MealsController < ApplicationController
-
+  before_action :find_meal, only: [ :show ]
   def index
+    @meals = Meal.all
   end
 
   def show
@@ -8,7 +9,11 @@ class MealsController < ApplicationController
 
   private
 
+  def find_meal
+    @meal = Meal.find(params[:id])
+  end
+
   def meal_params
-    params.require(:product).permit(:name, :description, :photo, :photo_cache)
+    params.require(:meal).permit(:name, :description, :photo, :photo_cache)
   end
 end
