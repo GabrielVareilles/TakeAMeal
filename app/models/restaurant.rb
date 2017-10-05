@@ -5,4 +5,6 @@ class Restaurant < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   mount_uploader :photo, PhotoUploader
+
+  has_many :orders, through: :meals
 end
