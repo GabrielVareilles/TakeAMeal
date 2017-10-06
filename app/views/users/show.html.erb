@@ -1,0 +1,17 @@
+<h1> N'oubliez pas d'aller chercher votre commande </h1>
+
+<%= render 'meals/show' %>
+
+<h1>Détails de la commande </h1>
+<p><%= @order.pick_up_time %></p>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.address2 %></p>
+<p><%= @restaurant.post_code %></p>
+<p><%= @restaurant.phone_number %></p>
+
+<h1>Nombre de plats restants</h1>
+<p><%= @subscription.meal_per_month - @orders.count %></p>
+
+<!-- count number of orders wich timestamp is included in the current month -->
+
+<!-- Below, historique des commandes du user, not MVP -->
