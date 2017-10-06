@@ -3,15 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :restaurants, only: [ :show, :index ]
-  resources :restaurants do
-    resources :meals, only: [ :index, :show ]
-    resources :meals do
-      resources :orders, only: [ :new ]
-      resources :orders do
-        resources :reviews, only: [ :new ]
-      end
-    end
+  get "users/:id/orders/:id/reviews/new", to: "reviews#new"
+  resources :meals, only: [ :index, :show ] do
+     resources :orders, only: [ :new, :show ]
   end
-  resources :meals, only: [ :index ]
-
+  root to: "restaurants#index"
 end
