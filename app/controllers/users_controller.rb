@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.where(user_id: @user.id)
     @meal = Meal.find(@order.meal_id)
     @restaurant = Restaurant.find(@meal.restaurant_id)
   end

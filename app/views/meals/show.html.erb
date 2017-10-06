@@ -8,12 +8,6 @@
 <p><%= @restaurant.post_code %></p>
 <p><%= @restaurant.phone_number %></p>
 
-<p>Nombre de plats restants : <%= @restaurant.max_meal - @restaurant.orders.count %> </p>
-<br>
 
-<h1>Commande<h1>
-<p>Choix du créneau<p>
-<%= simple_form_for [@restaurant,@order] do |f| %>
-<%= f.input :pick_up_time, :collection => ["12h-12h15","12h15-12h30"] %>
-<%= f.submit "Commander" %>
-<% end %>
+
+

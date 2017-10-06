@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :restaurants, only: [ :show, :index ]
   get "users/:id/orders/:id/reviews/new", to: "reviews#new"
+  get "users/:id", to: "users#show"
   resources :meals, only: [ :index, :show ] do
      resources :orders, only: [ :new, :show ]
   end

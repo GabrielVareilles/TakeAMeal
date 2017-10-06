@@ -1,6 +1,6 @@
 
 
-<% if @user.order != nil do %>
+<% if @user.order != nil %>
   <h1> N'oubliez pas d'aller chercher votre commande : </h1>
 
   <h1>Détails de la commande </h1>
@@ -10,12 +10,10 @@
   <p><%= @restaurant.post_code %></p>
   <p><%= @restaurant.phone_number %></p>
 
-<% else do %>
+<% else %>
   <h1> Pad de commande en cours </h1>
+<% end %>
 
-
-<h1>Nombre de plats restants</h1>
-<p><%= @subscription.meal_per_month - @orders.count %></p>
 
 <!-- count number of orders wich timestamp is included in the current month -->
 
