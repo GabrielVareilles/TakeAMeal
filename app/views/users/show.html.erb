@@ -2,7 +2,6 @@
 
 <% if @user.order != nil do %>
   <h1> N'oubliez pas d'aller chercher votre commande : </h1>
-  <%= cl_image_tag @meal.photo, height: 300, width: 400, crop: :fill %>
 
   <h1>Détails de la commande </h1>
   <p><%= @order.pick_up_time %></p>
