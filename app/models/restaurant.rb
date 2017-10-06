@@ -6,5 +6,6 @@ class Restaurant < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
+  has_many :meals
   has_many :orders, through: :meals
 end
