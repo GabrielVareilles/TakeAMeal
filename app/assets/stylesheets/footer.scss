@@ -1,0 +1,31 @@
+#footer.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+#footer h1 {
+  margin-top: 5px;
+  color: grey;
+}
+
+
+.sitemap a {
+  text-decoration: none;
+}
+
+.sitemap ul {
+ list-style-type: none;
+ }
+
+.col-sx-12 {
+  text-align: center;
+  margin-bottom: 30px;
+ }
+
+#footer {
+  padding-top: 20px;
+  border-top: 4px solid #FF7147;
+ }
+
