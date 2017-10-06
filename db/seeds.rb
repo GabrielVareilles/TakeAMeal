@@ -42,8 +42,8 @@ Restaurant.create!(
   email: "catelan@gmail.com",
   encrypted_password: "epicwweurtt",
   password: "epicure",
-  phone_number: "+33 6 89 33 73 09",
-  category: "Basque",
+    phone_number: "+33 6 89 33 73 09",
+    category: "Basque",
   max_meal: 10,
   city: "Lille",
   post_code: "59000"
@@ -127,4 +127,25 @@ Order.create!(
   user_id: 2,
   meal_id: 2
 )
+puts 'Finished'
+
+puts 'Creating Reviews...'
+Review.create!(
+  rating: 5,
+  comment: "Burger absolument incroyable. Jamais je n'avais goute a un met aussi savoureux et delicat",
+  order_id:1
+)
+
+Review.create!(
+  rating: 4,
+  comment: "Ma mere me faisait souvent de la viande lorsque je venais dejeuner le dimanche. Grace a vous, j'ai pu retrouver ces saveurs. Merci Take A Meal !",
+  order_id:2
+)
+
+Review.create!(
+  rating: 5,
+  comment: "Originaire de Bretagne, je revais depuis maintenant longtemps de retrouver les sensations extraordinaires que procurent la chair de homard grille. Je suis definitivement Fan de votre concept.",
+  order_id: 3
+)
+
 puts 'Finished'
