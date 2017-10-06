@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_meal, only: [ :show, :edit, :update, :account ]
+  before_action :find_user, only: [ :show, :edit, :update, :account ]
 
   def new
     @user = User.new
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @restaurant.update(restaurant_params)
+    @user.update(user_params)
   end
 
   def show
