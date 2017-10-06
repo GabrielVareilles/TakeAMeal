@@ -19,8 +19,6 @@ class UsersController < ApplicationController
 
   def show
     @order = Order.where(user_id: @user.id)
-    @meal = Meal.find(@order.meal_id)
-    @restaurant = Restaurant.find(@meal.restaurant_id)
   end
 
   def index

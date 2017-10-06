@@ -11,4 +11,11 @@
   .navbar-brand {
     color: white;
   }
+  .navbar-right {
+    text-decoration: none;
+    color: white;
+      &:hover {
+        color: green;
+      }
+  }
 }
