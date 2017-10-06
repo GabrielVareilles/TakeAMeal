@@ -1,13 +1,19 @@
-<h1> N'oubliez pas d'aller chercher votre commande </h1>
 
-<%= render 'meals/show' %>
 
-<h1>Détails de la commande </h1>
-<p><%= @order.pick_up_time %></p>
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.address2 %></p>
-<p><%= @restaurant.post_code %></p>
-<p><%= @restaurant.phone_number %></p>
+<% if @user.order != nil do %>
+  <h1> N'oubliez pas d'aller chercher votre commande : </h1>
+  <%= cl_image_tag @meal.photo, height: 300, width: 400, crop: :fill %>
+
+  <h1>Détails de la commande </h1>
+  <p><%= @order.pick_up_time %></p>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.address2 %></p>
+  <p><%= @restaurant.post_code %></p>
+  <p><%= @restaurant.phone_number %></p>
+
+<% else do %>
+  <h1> Pad de commande en cours </h1>
+
 
 <h1>Nombre de plats restants</h1>
 <p><%= @subscription.meal_per_month - @orders.count %></p>
