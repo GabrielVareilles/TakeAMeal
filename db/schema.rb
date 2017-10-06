@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005150506) do
+ActiveRecord::Schema.define(version: 20171005161307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20171005150506) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "pick_up_time"
+    t.string "status"
+    t.bigint "user_id"
+    t.bigint "meal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meal_id"], name: "index_orders_on_meal_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -48,6 +59,15 @@ ActiveRecord::Schema.define(version: 20171005150506) do
     t.string "photo"
     t.index ["email"], name: "index_restaurants_on_email", unique: true
     t.index ["reset_password_token"], name: "index_restaurants_on_reset_password_token", unique: true
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_reviews_on_order_id"
   end
 
   create_table "subscriptions", force: :cascade do |t|
@@ -80,4 +100,7 @@ ActiveRecord::Schema.define(version: 20171005150506) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "meals"
+  add_foreign_key "orders", "users"
+  add_foreign_key "reviews", "orders"
 end
