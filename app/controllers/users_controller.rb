@@ -18,6 +18,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
+    @meal = Meal.find(@order.meal_id)
+    @restaurant = Restaurant.find(@meal.restaurant_id)
   end
 
   def index

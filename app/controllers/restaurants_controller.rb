@@ -1,14 +1,11 @@
 class RestaurantsController < ApplicationController
-  before_action :find_restaurant, only: [ :show, :interface ]
+  before_action :find_restaurant, only: [ :show ]
 
   def index
     @restaurants = Restaurant.all
   end
 
   def show
-  end
-
-  def interface
     #where the restaurant can see its orders of the day and set the maximum amount of meals per day
     #implement in index & show how many meals left.
     @restaurant.max_meal = 15
