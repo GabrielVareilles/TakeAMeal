@@ -1,0 +1,57 @@
+.cardsmeals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 113px;
+  margin: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+
+
+.div-row {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 292px;
+}
+
+.info-meals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  margin-top: 30px;
+}
+
+.card-title {
+  text-align: left;
+  margin-top: 5px;
+}
+
+.card-text-description {
+  text-align: left;
+  height: 45px;
+}
+
+.card-description {
+  margin: 7px;
+  text-align: left;
+  margin: auto;
+}
+
+.image {
+  height: 400px;
+}
+
+.card-block-info {
+  width: 200px;
+  text-align: left;
+}
+

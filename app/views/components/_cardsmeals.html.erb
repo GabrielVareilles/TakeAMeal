@@ -1,0 +1,19 @@
+<div class="card-deck">
+  <div class="card">
+    <% @meals.each do |meal| %>
+      <div class="col-md-4 col-sm-6 image" >
+        <div class="div-row">
+          <div class="info-meals">
+            <img src="https://place-hold.it/200x200" >
+            <div class="card-block-info">
+              <% @restaurant = Restaurant.find(meal.restaurant_id)%>
+              <h3 class="card-title"><%= @restaurant.name%></h3>
+              <p class="card-text"><%= meal.name %></p>
+              <p class="card-text-description"><small class="text-muted"><%= meal.description %></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
