@@ -1,15 +1,4 @@
 <%= render "components/jumbottron" %>
 <%= render "components/explanations" %>
+<%= render "components/restaurantsindex" %>
 
-
-<ul>
-  <% @restaurants.each do |r| %>
-  <li>
-    <h2><%= r.name %></h2>
-    <p><%= r.category %></p>
-    <p><%= r.address %></p>
-    <p><%= r.address2 %></p>
-
-  </li>
-  <% end %>
-</ul>
