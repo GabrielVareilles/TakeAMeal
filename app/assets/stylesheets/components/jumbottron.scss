@@ -19,5 +19,9 @@
   .btn {
     background: #FF6A44;
     border-color: #FF6A44;
+    &:hover {
+      background: #F24315;
+      border-color: #F24315;
+    }
   }
 }
