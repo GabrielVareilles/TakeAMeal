@@ -1,16 +1,28 @@
-
-<h2><%= @restaurant.name %></h2>
-<p><%= @restaurant.category %></p>
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.address2 %></p>
-<p><%= @restaurant.post_code %></p>
-<p><%= @restaurant.phone_number %></p>
-
-<div class="card-image" style="background-image: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= image_path('burger.jpg') %>');">
-
-<h1><%= @meal.name %></h1>
-<p><%= @meal.description %></p>
+<%= render "components/restaurantbanner" %>
 
 
+<div class="meal-wrapper">
+  <div class="meal-container">
+    <div class="row">
+      <div class = " col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-0 col-md-8 ">
+        <div class = "card-meal">
+          <h1><%= @meal.name %></h1>
+          <img id="meal-photo" src="https://place-hold.it/500x400" >
+          <p> Description du plat:</p>
+          <p><%= @meal.description %></p>
+        </div>
+      </div>
+      <div class = "col-xs-12 col-md-4">
+        <div class = "pick-card text-center">
+          <h2> Pick-up </h2>
+          <div class = "pick-card-description">
+            <p> Choisissez votre créneau : </p>
+            <%= render "orders/new" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 

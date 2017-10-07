@@ -1,0 +1,45 @@
+.banner {
+  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.5));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  position: relative;
+
+  h2 {
+    font-size: 60px;
+    color: white;
+    padding-bottom: 30px;
+  }
+  p {
+    font-size: 15px;
+    color: #ededed;
+    font-weight: light;
+    font-style: italic;
+  }
+
+}
+
+.infos {
+  position: absolute;
+  bottom: 2px;
+  left: 15px;
+}
+
+.fa-map-marker:before {
+  font-size: 15px;
+  color: #ededed;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.fa-phone:before {
+  font-size: 15px;
+  color: #ededed;
+  margin-right: 5px;
+  margin-left: 5px;
+}
