@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :first_name, :last_name, :phone_number, :post_code, presence: true
+
+  has_many :orders
 end
