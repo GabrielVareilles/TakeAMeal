@@ -1,6 +1,6 @@
 
-<h2>Hello <%= current_user.first_name %>,</h2>
-<% @order = Order.find(current_user.id) %>
+<h2>Bonjour <%= current_user.first_name %>,</h2>
+<% @order = Order.find_by(user_id: current_user.id) %>
 <% if @order != nil %>
   <h3> N'oubliez pas d'aller chercher votre <%= @order.meal.name %>  </h3>
   <p><%= @order.pick_up_time %></p>
@@ -10,6 +10,8 @@
   <p><%= @restaurant.address %></p>
   <p><%= @restaurant.post_code %> <%= @restaurant.city %></p>
   <p><%= @restaurant.phone_number %></p>
+
+<p> Nombre de plats restants : XXXXXX </p>
 
   <p>Creer le bouton "Annuler ma commande"</p>
 <% else %>
@@ -24,9 +26,8 @@
 <p> Adresse email: <%= current_user.email %></p>
 <p> Telephone: <%= current_user.phone_number %></p>
 <p> Code Postal: <%= current_user.post_code %></p>
-<p> Entreprise: <%= current_user.company %></p>
 
-<p> Nombre de plats restants : XXXXXX </p>
+
 
 
 <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
