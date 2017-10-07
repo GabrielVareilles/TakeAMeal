@@ -56,6 +56,7 @@ User.create!(
   encrypted_password: "episd",
   password: "epicure",
   company: "Take a Meal",
+  post_code: "59000",
 )
 User.create!(
   first_name: "Paul",

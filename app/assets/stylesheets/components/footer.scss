@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+
 
 }
 
@@ -10,7 +13,11 @@
   color: grey;
 }
 
-
+.logo {
+  display: flex;
+  text-align: left;
+  margin-bottom: 20px;
+}
 .sitemap a {
   text-decoration: none;
 }
@@ -29,3 +36,20 @@
   border-top: 4px solid #FF6A44;
  }
 
+.footer-links {
+  display: flex;
+  align-items: center;
+  font-color: black;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+  font-color: black;
+
+}
+.footer-links a:hover {
+  opacity: 1;
+}
