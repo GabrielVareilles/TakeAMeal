@@ -7,5 +7,13 @@ class OrdersController < ApplicationController
   end
 
   def update
+    find_order
+    @order.status = "canceled"
+  end
+
+  private
+
+  def find_order
+    @order = Order.find(params[:id])
   end
 end
