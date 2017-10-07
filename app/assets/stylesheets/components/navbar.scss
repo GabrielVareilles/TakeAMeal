@@ -18,4 +18,13 @@
         color: green;
       }
   }
+  li {
+    list-style-type: none;
+  }
+  .dropdown-toggle {
+    color: white;
+    &:hover {
+      color: green;
+    }
+  }
 }
