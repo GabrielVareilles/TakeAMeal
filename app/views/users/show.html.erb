@@ -1,14 +1,34 @@
 
+<h2>Bonjour <%= current_user.first_name %>,</h2>
+<% @order = Order.find_by(user_id: current_user.id) %>
+<% if @order != nil %>
+  <h3> N'oubliez pas d'aller chercher votre <%= @order.meal.name %>  </h3>
+  <p><%= @order.pick_up_time %></p>
+  <p><% @meal = @order.meal %></p>
+  <p><% @restaurant = Restaurant.find(@meal.restaurant_id) %></p>
+  <p><%= @restaurant.name %></p>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.post_code %> <%= @restaurant.city %></p>
+  <p><%= @restaurant.phone_number %></p>
 
-<% if @user != nil %>
-  <h1> N'oubliez pas d'aller chercher votre commande : </h1>
+<p> Nombre de plats restants : XXXXXX </p>
 
-  <h1>Détails de la commande </h1>
-
-
+  <p>Creer le bouton "Annuler ma commande"</p>
 <% else %>
-  <h1> Pad de commande en cours </h1>
+  <h1> Quel plat desirez vous aujourd'hui ?</h1>
+  <p> Bouton decouverte des mets du jour </p>
+  <%= link_to "Decouverte des mets du jour", meals_path %>
 <% end %>
+
+<h3> Mes informations </h3>
+<p> Prenom: <%= current_user.first_name %></p>
+<p> Nom: <%= current_user.last_name %></p>
+<p> Adresse email: <%= current_user.email %></p>
+<p> Telephone: <%= current_user.phone_number %></p>
+<p> Code Postal: <%= current_user.post_code %></p>
+
+
+
 
 <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
 
