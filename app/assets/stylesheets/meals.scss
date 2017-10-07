@@ -1,1 +1,67 @@
 @import 'components/cardsmeals.scss';
+@import 'components/restaurantbanner.scss';
+
+
+.card-meal {
+  margin-top: 10px;
+  text-align: left;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.card-meal p {
+  padding-left: 5px;
+}
+
+.pick-card {
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 350px;
+}
+
+.pick-card h2 {
+  margin-bottom: 15px;
+}
+
+.pick-card-description {
+  align-items: center;
+}
+
+.row {
+  width: 100%;
+}
+
+.meal-container {
+  display: flex;
+  // margin-left: 25px;
+  // margin-right: 25px;
+}
+
+#meal-photo {
+  margin-bottom: 10px;
+}
+
+.fa-map-marker:before {
+  font-size: 15px;
+  margin-right: 5px;
+  margin-left: 10px;
+  color: #FF512C;
+}
+
+.fa-phone:before {
+  font-size: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #FF512C;
+}
+
+@media(max-width: 500px) {
+  .card-meal {
+    margin-left: 0px;
+    margin-left: 0px;
+  }
+}

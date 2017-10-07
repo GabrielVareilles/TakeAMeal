@@ -1,0 +1,8 @@
+<div class="banner" style="background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= image_path('plat.jpg') %>');  background-repeat: no-repeat; background-position: center; background-size: cover;">
+  <h2><%=@restaurant.name%></h2>
+  <div class="infos">
+  <p><i class="fa fa-phone" aria-hidden="true"></i><%=@restaurant.phone_number%>
+    <i class="fa fa-map-marker" aria-hidden="true">  </i><%=@restaurant.address%>, <%= @restaurant.post_code%></p>
+  </div>
+</div>
+
