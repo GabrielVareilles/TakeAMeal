@@ -1,6 +1,6 @@
 <%= render partial: "components/jumbottron", locals: { title: "Bonjour, " + current_user.first_name, subtitle: "Aujourd'hui, nous vous proposons les plats suivants:"} %>
 
-<div class="wrapper-meals">
+<div id="discover" class="wrapper-meals">
   <div class="container">
     <% @meals.each do |meal| %>
     <div class="col-md-4 col-sm-6 col-xs-12 ">
