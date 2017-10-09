@@ -3,5 +3,5 @@
             <%f.hidden_field :user_id, :value => current_user.id%>
             <p><i class="fa fa-map-marker" aria-hidden="true"></i><%=@restaurant.address%>, <%= @restaurant.post_code%>, <%= @restaurant.city%> </p>
             <p><i class="fa fa-phone" aria-hidden="true"></i><%=@restaurant.phone_number%></p>
-            <%= f.submit "Commander", class: "btn btn-primary" %>
+            <%= f.submit "Commander", class: "btn btn-primary order" %>
             <% end %>
