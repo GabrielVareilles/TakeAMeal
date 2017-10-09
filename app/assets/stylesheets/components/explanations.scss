@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.fa-map-marker:before {
+.fa-map-marker.home:before {
   font-size: 10em;
   color: #FF6A44;
 }
@@ -42,4 +42,17 @@ margin-bottom: 20px;
 .wrapper {
   border-bottom: 6px solid #00DDBA;
   padding-bottom: 20px;
+}
+
+@media(max-width: 767px) {
+  .home-card {
+    border-color: white;
+  }
+  .title h1 {
+    font-size: 30px;
+  }
+  .title {
+    width: 339px;
+  }
+
 }
