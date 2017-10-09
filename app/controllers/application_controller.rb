@@ -4,14 +4,15 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.is_a?(User)
-    meals_path
+      meals_path
     else
-    restaurant_path(current_restaurant)
-  end
+      restaurant_path(current_restaurant)
+    end
   end
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address2, :post_code, :phone_number])
+    devise_parameter_sanitizer.permit(:edit, keys: [:first_name, :last_name, :address2, :post_code, :phone_number])
   end
 end

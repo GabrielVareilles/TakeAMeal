@@ -1,7 +1,7 @@
 <%= render partial: "components/jumbottron", locals: {title: "LES MEILLEURS DÉJEUNERS POUR MOINS DE 6€", subtitle: "Commandez vos repas à l'avance et ne faites plus la queue"} %>
 <%= render "components/explanations" %>
 
-<div class="wrapper">
+<div class="wrapper-meals">
   <h1>Vos restaurants partenaires: </h1>
   <div class="container">
     <% @restaurants.each do |restaurant| %>
