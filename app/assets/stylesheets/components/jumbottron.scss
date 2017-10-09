@@ -1,5 +1,5 @@
 .jumbotron {
-  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(0,0,0,0.5));
+  background: linear-gradient(135deg, rgba(0,0,0,0.91), rgba(0,0,0,0.51));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -19,5 +19,9 @@
   .btn {
     background: #FF6A44;
     border-color: #FF6A44;
+    &:hover {
+      background: #F24315;
+      border-color: #F24315;
+    }
   }
 }
