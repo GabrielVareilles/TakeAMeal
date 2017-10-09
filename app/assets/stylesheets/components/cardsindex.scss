@@ -1,5 +1,4 @@
 .wrapper-meals {
-  // overflow: scroll;
 }
 
 .info-meals {
@@ -44,12 +43,12 @@
 }
 
 a.divLink {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    text-decoration: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none;
     /* Makes sure the link doesn't get underlined */
     z-index: 10;
     /* raises anchor tag above everything else in div */
@@ -59,5 +58,5 @@ a.divLink {
     /*workaround to make clickable in IE */
     filter: alpha(opacity=0);
     /*workaround to make clickable in IE */
-}
+  }
 
