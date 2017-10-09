@@ -18,7 +18,22 @@
         <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
       </ul>
     </li>
+
+    <% elsif restaurant_signed_in? %>
+
+    <li class="dropdown navbar-text navbar-right">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_restaurant.name %> <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to 'Mon compte', restaurant_path(current_restaurant.id) %></li>
+        <li role="separator" class="divider"></li>
+        <li><%= link_to "Se déconnecter", destroy_restaurant_session_path, method: :delete %></li>
+      </ul>
+    </li>
+
+
     <% else %>
+
+
 
     <%= link_to "S'INSCRIRE / SE CONNECTER", new_user_session_path, class: "navbar-right navbar-text" %>
   </div>
