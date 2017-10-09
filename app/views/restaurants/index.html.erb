@@ -2,6 +2,7 @@
 <%= render "components/explanations" %>
 
 <div class="wrapper">
+  <h1>Vos restaurants partenaires: </h1>
   <div class="container">
     <% @restaurants.each do |restaurant| %>
     <div class="col-md-4 col-sm-6 col-xs-12" >
@@ -29,7 +30,7 @@
             <h4> 12 Repas </h4>
           </div>
           <div class="img-sub">
-            <img src="../../assets/sandwichs.jpg" style="width:260px;height:180px;"/>
+            <%= image_tag "sandwichs.jpg", :class => "style_image" %>
           </div>
           <div class="card-prix">
             <p> Jusqu’à 12 déjeuners par cycle</p>
@@ -44,7 +45,7 @@
             <h4>20 Repas</h4>
           </div>
           <div class="img-sub">
-            <img src="../../assets/pizza.jpg" style="width:260px;height:180px;" />
+            <%= image_tag "pizza.jpg", :class => "style_image" %>
           </div>
           <div class="card-prix">
             <p> Jusqu’à 20 déjeuners par cycle</p>
