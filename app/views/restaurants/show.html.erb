@@ -1,17 +1,49 @@
+<div class = "container">
+
+<h2> Votre limite de plats </h2>
+
 <p> Limite de plats produits par jour : <%= @restaurant.max_meal %> </p>
+<%= render 'edit' %>
 
-<h1> Commandes du jours  </h1>
-<ul>
-  <% @meal.orders.each do |o| %>
-  <li>
-    <h2><%= o.id %></h2>
-    <p><%= o.date%></p>
-    <p><%= @meal%></p>
-    <p><%= o.first_name %></p>
-    <p><%= o.last_name %></p>
-    <p><%= o.pick_up_time %></p>
+<div class = "tableau">
+<h2> Commandes du jour  </h2>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Ci-dessous :</div>
 
-  </li>
-  <% end %>
-</ul>
+  <!-- Table -->
+  <table class="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Order Id</th>
+      <th>Meal</th>
+      <th>User Id</th>
+      <th>User Name</th>
+      <th>Pick-up Time</th>
+      <th>Order Time</th>
+      <th>Order status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% i = 0 %>
+    <% @orders.each do |o| %>
+    <% @user = User.where(id: o.user_id).first %>
+    <% i = i+1 %>
+    <tr>
+      <td><%= i %></td>
+      <td><%= o.id %></td>
+      <th><%= @meal.name %></th>
+      <td><%= @user.id %></td>
+      <td> <%= @user.first_name %> <%= @user.last_name %> </td>
+      <td><%= o.pick_up_time%></td>
+      <td><%= o.created_at.to_formatted_s(:long)%></td>
+      <td><%= o.status%></td>
+      <% end %>
+    </tr>
+  </tbody>
+  </table>
+</div>
+</div>
 
+</div>

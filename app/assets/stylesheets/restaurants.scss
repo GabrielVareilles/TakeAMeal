@@ -2,4 +2,112 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'components/jumbottron.scss';
+@import 'components/cardsindex.scss';
 
+.plans-container {
+  text-align: center;
+  padding: 10px;
+
+}
+
+.plans-container h1 {
+  display: inline-block;
+  border-bottom: 2px solid grey;
+  padding-bottom:5px;
+  font-weight:bold;
+}
+
+.plans-container.plan-box {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card-category {
+  font-size: 15px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: #4C4C4C;
+}
+
+.card-category h4 {
+  font-weight:bold;
+  margin-bottom: 20px;
+}
+
+.card-subscritpion {
+
+  color: grey;
+  display: flex;
+  text-align: center;
+  margin: 30px;
+  margin-top: 10px;
+  flex-direction: column;
+
+}
+
+.row-sub {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  text-align: center;
+}
+
+
+.img-sub {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex: 0 0 20%;
+
+}
+
+.card-prix {
+  font-size: 12px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 5px;
+  flex-direction: column;
+}
+
+.card-prix p{
+  margin: 3px;
+  color: black;
+  font-weight: bold;
+
+}
+
+.btn-sub {
+  color: white;
+
+  padding: 5px 5px;
+  font-weight: bold;
+  background: #00D4B7;
+  transition: background 0.5s ease;
+}
+
+.btn-sub:hover {
+  opacity: 1;
+  background: #00D4B7;
+  text-decoration: none;
+  color: black;
+}
+
+.form-inline {
+  margin-left: 0px;
+  margin-bottom: 10px;
+}
+
+.tableau {
+  margin-top: 35px;
+}
+
+.style_image {
+  width: 260px;
+  height: 180px;
+}
