@@ -74,12 +74,14 @@
   margin-top: 10px;
   padding: 5px;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .card-prix p{
-  margin: 3px;
+  margin: 1px;
   color: black;
   font-weight: bold;
+
 
 }
 
@@ -97,4 +99,9 @@
   background: #00D4B7;
   text-decoration: none;
   color: black;
+}
+
+.style_image {
+  width: 260px;
+  height: 180px;
 }
