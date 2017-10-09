@@ -1,4 +1,5 @@
  <%= simple_form_for [@meal, @order] do |f| %>
+
             <%= f.input :pick_up_time, collection: [ "12h-12h15", "12h15-12h30", "12h30-12h45", "12h45-13h"] %>
             <%f.hidden_field :user_id, :value => current_user.id%>
             <p><i class="fa fa-map-marker" aria-hidden="true"></i><%=@restaurant.address%>, <%= @restaurant.post_code%>, <%= @restaurant.city%> </p>

@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
     @meal = Meal.find(params[:meal_id])
     @order = current_user.orders.new(order_params)
     @order.meal =  @meal
+    @restaurant = Restaurant.find(@meal.restaurant_id)
     if @order.save
       flash[:notice] = "Votre commande a été créée"
       redirect_to @meal
