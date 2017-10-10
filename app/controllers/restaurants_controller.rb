@@ -22,9 +22,14 @@ class RestaurantsController < ApplicationController
     #implement in index & show how many meals left.
     #valeur par défaut pour l'instant
     # authorize @restaurant
-    @meal = Meal.where(restaurant_id: @restaurant.id).first
-    @orders = Order.where(meal_id: @meal.id)
+    if @restaurant == current_restaurant
+      @meal = Meal.where(restaurant_id: @restaurant.id).first
+      @orders = Order.where(meal_id: @meal.id)
 
+    else
+      flash[:alert] = "You are not authorized to perform this action, BATERD."
+      redirect_to(root_path)
+    end
     authorize @restaurant
   end
 

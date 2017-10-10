@@ -1,13 +1,14 @@
-<h2>Editer mon profil</h2>
+<div class="container">
+  <h2>Editer mon profil</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
     <%= f.input :first_name %>
@@ -23,6 +24,7 @@
   <div class="form-actions">
     <%= f.button :submit, "Mettre à jour" %>
   </div>
-<% end %>
+  <% end %>
 
-<%= link_to "Retour", :back %>
+  <%= link_to "Retour", :back %>
+</div>
