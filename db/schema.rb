@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010102936) do
+ActiveRecord::Schema.define(version: 20171010123628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,19 @@ ActiveRecord::Schema.define(version: 20171010102936) do
     t.index ["order_id"], name: "index_reviews_on_order_id"
   end
 
+  create_table "subscription_orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
+    t.date "end_date"
+    t.bigint "user_id"
+    t.bigint "subscription_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_subscription_orders_on_subscription_id"
+    t.index ["user_id"], name: "index_subscription_orders_on_user_id"
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.string "name"
     t.integer "meal_per_month"
@@ -120,4 +133,6 @@ ActiveRecord::Schema.define(version: 20171010102936) do
   add_foreign_key "orders", "meals"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "orders"
+  add_foreign_key "subscription_orders", "subscriptions"
+  add_foreign_key "subscription_orders", "users"
 end

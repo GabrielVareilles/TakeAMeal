@@ -5,7 +5,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def new
-    @Subscription = Subscription.new
+    @subscription = Subscription.new
   end
 
   def create

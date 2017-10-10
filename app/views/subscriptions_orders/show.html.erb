@@ -1,0 +1,6 @@
+
+<h1>Order</h1>
+<ul>
+  <li>Status: <%= @subscription_order.state %></li>
+  <li>Montant: <%= humanized_money_with_symbol(@subscription_order.amount) %></li>
+<ul>
