@@ -4,7 +4,13 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(resource)
-    meals_path
+    if resource.is_a?(User)
+      meals_path
+    elsif resource.is_a?(Restaurant)
+      restaurant_path(current_restaurant)
+    else
+      restaurants_path
+
   end
 
   def configure_permitted_parameters
