@@ -144,3 +144,18 @@ Review.create!(
 )
 
 puts 'Finished'
+
+puts 'Creating Subscription'
+Subscription.create!(
+  name: "Offre decouverte",
+  meal_per_month: 12,
+  price_cents: 76.8
+)
+
+Subscription.create!(
+  name: "Offre habitue",
+  meal_per_month: 20,
+  price_cents: 119.8
+)
+
+puts "Finished"

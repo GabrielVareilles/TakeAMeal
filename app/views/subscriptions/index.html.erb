@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <h1>Abonnements</h1>
+    <% @subscriptions.each do |subscription| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <%= link_to image_tag("https://place-hold.it/200x200"), subscription_path(subscription) %>
+          <div class="caption">
+            <h3><%= link_to subscription.name, subscription_path(subscription) %></h3>
+            <p>Prix: <%= humanized_money_with_symbol(subscription.price_cents) %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

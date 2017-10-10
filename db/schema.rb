@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007093001) do
+ActiveRecord::Schema.define(version: 20171010123628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 20171007093001) do
     t.string "name"
     t.string "address"
     t.string "address2"
-    t.string "email_address"
     t.string "phone_number"
     t.string "category"
     t.integer "max_meal"
@@ -86,11 +85,25 @@ ActiveRecord::Schema.define(version: 20171007093001) do
     t.index ["order_id"], name: "index_reviews_on_order_id"
   end
 
+  create_table "subscription_orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
+    t.date "end_date"
+    t.bigint "user_id"
+    t.bigint "subscription_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subscription_id"], name: "index_subscription_orders_on_subscription_id"
+    t.index ["user_id"], name: "index_subscription_orders_on_user_id"
+  end
+
   create_table "subscriptions", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.integer "meal_per_month"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,7 +122,6 @@ ActiveRecord::Schema.define(version: 20171007093001) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone_number"
-    t.string "email_address"
     t.string "company"
     t.string "post_code"
     t.boolean "admin", default: false, null: false
@@ -121,4 +133,6 @@ ActiveRecord::Schema.define(version: 20171007093001) do
   add_foreign_key "orders", "meals"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "orders"
+  add_foreign_key "subscription_orders", "subscriptions"
+  add_foreign_key "subscription_orders", "users"
 end
