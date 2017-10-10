@@ -3,14 +3,43 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user-wrapper {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  padding-top: 50px;
+
 }
 
 .user-container {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+}
+
+.card-user {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+
+  // flex: 0 0 0%;
+  // width: 500px;
+}
+
+.card-user-info {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 100px;
+  margin-right: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+
+
+  // flex: 0 0 0%;
+  // width: 500px;
+}
+#meal-photo {
+
 }

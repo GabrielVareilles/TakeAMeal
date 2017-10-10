@@ -1,25 +1,43 @@
 <div id="explanations" class="wrapper">
   <div id="discover" class="container">
-    <div class = "title">
-    <h1> COMMENT ÇA MARCHE </h1>
+    <div class = "text-center title">
+      <h1> COMMENT ÇA MARCHE ? </h1>
     </div>
     <br>
-    <div class="row text-center">
-      <div class="home-card col-xs-12 col-sm-4">
-        <i class="fa fa-map-marker home" aria-hidden="true"></i>
-        <h2> Choisissez </h2>
-        <p> Plus de 100 restaurants locaux vous proposent des repas différents tous les jours.</p>
+    <div class="row">
+      <div class="text-card col-xs-12 col-md-6">
+        <div class="row">
+          <div class="logo-home col-xs-12 col-sm-3">
+            <h1> 1 </h1>
+          </div>
+          <div id="text1" class="text col-xs-12 col-sm-9">
+            <h2> Choisissez votre repas à l'avance </h2>
+            <p> Commandez votre déjeuner, du lundi au vendredi, parmi des centaines de propositions délicieuses partout autour de vous. </p>
+          </div>
+        </div>
+        <div class="row">
+        <div class="logo-home col-xs-12 col-sm-3">
+            <h1> 2 </h1>
+          </div>
+          <div class="text col-xs-12 col-sm-9">
+            <h2> Récupérez votre plat prêt</h2>
+            <p> Gagnez du temps! Plus besoin de faire la queue ou de sortir votre porte-monnaie, nous nous occupons de tout.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="logo-home col-xs-12 col-sm-3">
+            <h1> 3 </h1>
+          </div>
+          <div class="text col-xs-12 col-sm-9">
+            <h2> Profitez-en tant que vous voulez </h2>
+            <p> Les déjeunes signatures des meilleurs restaurants au meilleur prix et selon vos besoins.</p>
+          </div>
+        </div>
       </div>
-      <div class="home-card col-xs-12 col-sm-4">
-        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-        <h2> Récupérez </h2>
-        <p> Coupez la file d'attente. Take A Meal prend en charge le coût du repas.</p>
-      </div>
-      <div id="right-card" class="home-card col-xs-12 col-sm-4">
-        <i class="fa fa-cutlery" aria-hidden="true"></i>
-        <h2> Dégustez, Recommencez </h2>
-        <p> Déjeunez tous les jours dans les meilleurs restaurants.</p>
+      <div class="image-card">
+        <%= image_tag "sandwichs.jpg", id: "map", class: "img-responsive col-xs-12 col-md-6", width: 600, height: 450, crop: :fill %>
       </div>
     </div>
   </div>
 </div>
+
