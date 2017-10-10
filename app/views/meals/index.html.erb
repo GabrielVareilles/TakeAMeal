@@ -1,4 +1,6 @@
-<%= render partial: "components/jumbottron", locals: { title: "Bonjour, " + current_user.first_name, subtitle: "Aujourd'hui, nous vous proposons les plats suivants:", redirection: "#discover"} %>
+<% if @open %>
+
+<%= render partial: “components/jumbottron”, locals: { title: “Bonjour, ” + current_user.first_name, subtitle: “Aujourd’hui, nous vous proposons les plats suivants:“} %>
 
 <div id="discover" class="wrapper-meals">
   <div class="container">
