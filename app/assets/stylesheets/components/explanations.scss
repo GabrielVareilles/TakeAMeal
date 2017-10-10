@@ -4,21 +4,6 @@
   align-items: center;
 }
 
-.fa-map-marker.home:before {
-  font-size: 10em;
-  color: #FF6A44;
-}
-
-.fa-shopping-bag:before {
-  font-size: 10em;
-  color: #FF6A44;
-}
-
-.fa-cutlery:before {
-  font-size: 10em;
-  color: #FF6A44;
-}
-
 .home-card {
   margin-bottom: 20px;
   border-right: 2px solid #EEEEEE;
@@ -27,12 +12,27 @@
 
 .title {
 border-bottom: 4px solid #00DDBA;
-width: 405px;
+width: 100%;
 margin-bottom: 20px;
 }
 
+.title h1 {
+  width : 100%;
+}
+
 .text-card p {
-  font-size: 16px;
+  font-size: 14px;
+}
+
+.text-card {
+  height: 450px;
+  padding-top: 25px;
+  margin-bottom: 20px;
+}
+
+.text h2 {
+  font-size : 20px;
+  margin-top: 10px;
 }
 
 #right-card {
@@ -44,6 +44,40 @@ margin-bottom: 20px;
   padding-bottom: 20px;
 }
 
+.logo-home {
+  display: inline-block;
+  vertical-align: top;
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  background-color: #FF512C;
+  text-align: center;
+}
+
+.logo-home h1 {
+  color: white;
+  font-size: 54px;
+  font-family: Gujarati MT;
+  font-weight: bold;
+  padding-top: 2px;
+  padding-left: 3px;
+}
+
+
+.text {
+  display: inline-block;
+  vertical-align: top;
+  width: 75%;
+  height: 125px;
+  padding-left: 32px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+#text1 {
+  margin-bottom: 25px;
+}
+
 @media(max-width: 767px) {
   .home-card {
     border-color: white;
@@ -51,8 +85,14 @@ margin-bottom: 20px;
   .title h1 {
     font-size: 30px;
   }
-  .title {
-    width: 339px;
+
+  .text {
+    margin-right: 5px;
   }
 
+}
+@media(max-width: 500px) {
+  .text {
+    margin-right: 0px;
+  }
 }
