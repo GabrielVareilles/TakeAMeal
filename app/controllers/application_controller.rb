@@ -6,11 +6,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.is_a?(User)
-    meals_path
-    elsif resource.is_a?(Restaurant)
-    restaurant_path(current_restaurant)
+      meals_path
     else
-    restaurants_path
+      restaurant_path(current_restaurant)
     end
   end
 
