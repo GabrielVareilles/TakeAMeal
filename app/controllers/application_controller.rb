@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
       restaurant_path(current_restaurant)
     else
       restaurants_path
+    end
   end
 
   def configure_permitted_parameters
