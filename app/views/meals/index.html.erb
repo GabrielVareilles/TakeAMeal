@@ -1,6 +1,6 @@
 <% if @open %>
 
-<%= render partial: "components/jumbottron", locals: { title: "Bonjour, " + current_user.first_name, subtitle: "Aujourd’hui, nous vous proposons les plats suivants:", redirection: "#discover"} %>
+<%= render partial: "components/jumbottron", locals: { title: "Bonjour, " + current_user.first_name, subtitle: "Aujourd’hui, nous vous proposons les plats suivants:", redirection: "#discover", CTA: "Découvrir"} %>
 
 <div id="discover" class="wrapper-meals">
   <div class="container">
@@ -25,7 +25,7 @@
 
 <% else %>
 
-<%= render partial: "components/jumbottron", locals: { title: "Bonjour, " + current_user.first_name, subtitle: "vous pourrez faire votre choix entre 17h et 11h.", redirection: "#discover"} %>
+<%= render partial: "components/jumbottron", locals: { title: "Bonjour, " + current_user.first_name, subtitle: "vous pourrez faire votre choix entre 17h et 11h.", redirection: "#discover", CTA: "En savoir plus"} %>
 
 <div id="discover" class="wrapper-meals">
   <div class="closed-container">
