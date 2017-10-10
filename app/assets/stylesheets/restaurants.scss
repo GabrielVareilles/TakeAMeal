@@ -48,14 +48,6 @@
   margin-bottom: 20px;
 }
 
-.img-sub {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  flex: 0 0 20%;
-
-}
-
 .card-prix {
   font-size: 12px;
   display: flex;
@@ -101,4 +93,15 @@
 .style_image {
   width: 260px;
   height: 180px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex: 0 0 20%;
+}
+
+.wrapper-meals {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
