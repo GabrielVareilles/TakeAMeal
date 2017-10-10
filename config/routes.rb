@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :meals, only: [ :index, :show ] do
      resources :orders, only: [ :new, :show, :create, :update ]
   end
+  resources :subscriptions, only: [:index, :show]
   root to: "restaurants#index"
 end
