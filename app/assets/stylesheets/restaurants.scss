@@ -46,14 +46,17 @@
 .card-category h4 {
   font-weight:bold;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
-.img-sub {
+.upper-card {
   display: flex;
-  text-align: center;
-  justify-content: center;
-  flex: 0 0 20%;
-
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card-prix {
@@ -101,4 +104,11 @@
 .style_image {
   width: 260px;
   height: 180px;
+}
+
+.wrapper-meals {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
