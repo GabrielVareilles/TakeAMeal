@@ -2,6 +2,7 @@ class MealsController < ApplicationController
   before_action :find_meal, only: [ :show ]
   def index
     @meals = Meal.all
+    @open = kitchen_open?
   end
 
   def show
@@ -17,5 +18,15 @@ class MealsController < ApplicationController
 
   def meal_params
     params.require(:meal).permit(:name, :description, :photo, :photo_cache)
+  end
+
+  def kitchen_open?
+    @eleven_am = Time.new(Date.today.year, Date.today.month, Date.today.day, 11, 0, 0)
+    @five_pm = Time.new(Date.today.year, Date.today.month, Date.today.day, 17, 0, 0)
+    @time = Time.now
+    if @time >= @eleven_am && @time <= @five_pm
+      return false
+    end
+    true
   end
 end
