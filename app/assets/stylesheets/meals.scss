@@ -107,3 +107,11 @@
     margin-right: auto;
   }
 }
+
+.closed-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0 100px 0;
+}

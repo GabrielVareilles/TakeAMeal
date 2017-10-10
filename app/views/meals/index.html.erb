@@ -1,3 +1,5 @@
+<% if @open %>
+
 <%= render partial: "components/jumbottron", locals: { title: "Bonjour, " + current_user.first_name, subtitle: "Aujourd'hui, nous vous proposons les plats suivants:"} %>
 
 <div id="discover" class="wrapper-meals">
@@ -20,3 +22,17 @@
     <% end %>
   </div>
 </div>
+
+<% else %>
+
+<%= render partial: "components/jumbottron", locals: { title: "Bonjour, " + current_user.first_name, subtitle: "vous pourrez faire votre choix entre 17h et 11h."} %>
+
+<div id="discover" class="wrapper-meals">
+  <div class="closed-container">
+    <h1>Les Cuisines sont actuellement fermées.</h1>
+    <h2>Revenez entre 17h et 11h pour faitre votre choix.</h2>
+    <p>A tout à l'heure !</p>
+  </div>
+</div>
+
+<% end %>
