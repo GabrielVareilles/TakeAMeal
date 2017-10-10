@@ -1,4 +1,4 @@
-<%= render partial: "components/jumbottron", locals: {title: "LES MEILLEURS DÉJEUNERS POUR MOINS DE 6€", subtitle: "Commandez vos repas à l'avance et ne faites plus la queue"} %>
+<%= render partial: "components/jumbottron", locals: {title: "LES MEILLEURS DÉJEUNERS POUR MOINS DE 6€", subtitle: "Commandez vos repas à l'avance et ne faites plus la queue", redirection: "#subscription"} %>
 <%= render "components/explanations" %>
 
 <div class="wrapper">
@@ -20,7 +20,7 @@
     <% end %>
   </div>
 
-  <div class="plans-container">
+  <div id="subscription" class="plans-container">
     <h1> Choisissez une offre adaptée </h1>
     <h4>Chaque offre donne accès à un nombre défini de déjeuners à </h4>
     <h4>emporter, du lundi au vendredi, durant une période d’un mois</h4>
