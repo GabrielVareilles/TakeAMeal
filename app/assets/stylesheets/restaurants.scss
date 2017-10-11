@@ -122,11 +122,13 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  background: #FFF5F3;
+  padding: 20px 0 20px 0;
 }
 
 .wrapper-meals h1 {
   display: inline-block;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid #FF6B44;
   padding-bottom:5px;
   font-weight:bold;
 }
