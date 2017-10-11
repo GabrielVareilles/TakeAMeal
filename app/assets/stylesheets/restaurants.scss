@@ -4,13 +4,20 @@
 @import 'components/jumbottron.scss';
 @import 'components/cardsindex.scss';
 
+#home-jumbo {
+  height: 90vh;
+}
+
+.jumbo-row {
+  width: 90%;
+}
+
 .plans-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 10px;
-
 }
 
 .plans-container h1 {
@@ -111,4 +118,23 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+}
+
+.wrapper-meals h1 {
+  display: inline-block;
+  border-bottom: 2px solid grey;
+  padding-bottom:5px;
+  font-weight:bold;
+}
+
+@media(max-width: 991px) {
+  .card-jumbo {
+    text-align: center;
+  }
+}
+
+@media(max-width: 767px) {
+  .plans-container h1 {
+    font-size: 30px;
+  }
 }
