@@ -17,14 +17,15 @@
 
 <div class="wrapper-meals">
   <div class="plans-container">
-    <h1>Les meilleurs restaurants de votre ville:</h1>
+    <h1>Les meilleurs restaurants de votre ville</h1>
   </div>
   <div class="container">
     <% @restaurants.each do |restaurant| %>
       <div class="col-md-4 col-sm-6 col-xs-12" >
         <div class="card">
           <div class="info-meals">
-            <img src="https://place-hold.it/200x200" >
+            <div class="img-restaurant" style="background: url('<%=restaurant.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 200px; width: 200px;">
+            </div>
             <div class="card-block-info">
               <h3 class="card-title"><%= restaurant.name%></h3>
               <p class="card-text"><%= restaurant.category %></p>
