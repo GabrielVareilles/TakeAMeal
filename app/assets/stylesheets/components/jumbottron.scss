@@ -27,3 +27,17 @@
     }
   }
 }
+
+#jumbo p {
+  text-align: center;
+}
+
+#home-jumbo h1 {
+  font-size: 50px;
+  color: white;
+}
+@media(max-width: 767px) {
+  #home-jumbo h1 {
+    font-size: 40px;
+  }
+}
