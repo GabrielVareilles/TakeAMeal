@@ -8,7 +8,8 @@ class MealsController < ApplicationController
   def show
     @has_order = has_order?
     @restaurant = Restaurant.find(@meal.restaurant_id)
-    @order = Order.where(user_id: current_user.id, status: nil).last
+    @order = Order.new
+
   end
 
   private
