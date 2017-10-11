@@ -1,33 +1,31 @@
 <div class="banner" style="background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= image_path('plat.jpg') %>');  background-repeat: no-repeat; background-position: center; background-size: cover;">
-  <h2>Bonjour <%= current_user.first_name %>,</h2>
+  <h1>Bonjour <%= current_user.first_name %>,</h1>
   <p id="sous-titre">Nous sommes heureux de vous voir sur notre site aujourd'hui !</p>
 </div>
-
 <div class="user-wrapper">
   <div class="user-container">
     <div class="row">
       <div class = " col-xs-12 col-sm-6">
         <div class = "card-user">
-          <% @order = Order.find_by(user_id: current_user.id) %>
-          <% if @order != nil %>
+          <% if @has_order %>
+          <h4> N'oubliez pas d'aller chercher votre <b><%= @order.meal.name %></b>:  </h4>
 
-
-            <h4> N'oubliez pas d'aller chercher votre <b><%= @order.meal.name %></b>:  </h4>
-            <img src="https://place-hold.it/150x150" style="height: 250px; width: 300px" >
-            <h4><b>Informations: </b></h4>
-            <% @meal = @order.meal %>
-            <% @restaurant = Restaurant.find(@meal.restaurant_id) %>
-            <p><b>Restaurant : </b> <%= @restaurant.name %></p>
-            <p><b>Adresse : </b><%= @restaurant.address %>&nbsp;&nbsp;&nbsp;&nbsp;<%= @restaurant.post_code %> <%= @restaurant.city %></p>
-            <p><b>Telephone : </b><%= @restaurant.phone_number %></p>
-            <p></p>
-            <p></p>
-            <p>Vous devez passer sur le creneau : <b><%= @order.pick_up_time %></b></p>
+          <%= link_to 'annuler ma commande', meal_order_path(@order.meal, @order), method: :put, confirm: 'Are you sure?' %>
+          <% @meal = @order.meal %>
+          <div class="img-meal" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 200px; width: 200px;">
+            </div>
+          <h4><b>Informations: </b></h4>
+          <% @restaurant = Restaurant.find(@meal.restaurant_id) %>
+          <p><b>Restaurant : </b> <%= @restaurant.name %></p>
+          <p><b>Adresse : </b><%= @restaurant.address %>&nbsp;&nbsp;&nbsp;&nbsp;<%= @restaurant.post_code %> <%= @restaurant.city %></p>
+          <p><b>Telephone : </b><%= @restaurant.phone_number %></p>
+          <p></p>
+          <p></p>
+          <p>Vous devez passer sur le creneau : <b><%= @order.pick_up_time %></b></p>
           <% else %>
 
-            <h1> Quel plat desirez vous aujourd'hui ?</h1>
-            <p> Bouton decouverte des mets du jour </p>
-            <%= link_to "Decouverte des mets du jour", meals_path %>
+          <h4>Vous n'avez pas encore commandé votre prochain repas.</h4>
+          <h5>Commandez dès maintenant en <%= link_to 'Cliquant ici', meals_path %></h5>
           <% end %>
         </div>
       </div>

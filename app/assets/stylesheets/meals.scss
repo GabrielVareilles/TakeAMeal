@@ -1,18 +1,30 @@
 @import 'components/restaurantbanner.scss';
 
-.meal-wrapper {
+#meals-text h1 {
+  border-bottom: none;
 }
 
+#meals-text p {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.wrapper-meals{
+  padding-bottom: 30px;
+}
 .card-meal {
   margin-top: 10px;
   margin-bottom: 30px;
   margin-left: 0px;
   margin-right: 0px;
-  align-item: center;
+  width: 450px;
   // flex: 0 0 0%;
   // width: 500px;
 }
 
+.card-meal p {
+  font-style: italic;
+}
 
 // .card-meal p {
 
@@ -29,7 +41,7 @@
   margin-top: 10px;
   text-align: center;
   margin-bottom: 30px;
-  margin-top: 67px;
+  margin-top: 52px;
   margin-left: 30px;
   margin-right: 70px;
   padding-right: 25px;
@@ -114,4 +126,10 @@
   align-items: center;
   flex-direction: column;
   padding: 100px 0 100px 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.img-meal{
+  margin: 2px;
 }

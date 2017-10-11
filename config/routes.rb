@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "users/:id/orders/:id/reviews/new", to: "reviews#new"
   get "users/:id", to: "users#show", as: 'users'
   resources :meals, only: [ :index, :show ] do
-     resources :orders, only: [ :new, :show, :create, :update ]
+     resources :orders, only: [ :new, :show, :create, :edit, :update ]
   end
   resources :subscriptions, only: [:index, :show]
   resources :subscriptions_orders, only: [:show, :create] do

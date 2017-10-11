@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :find_order, only: [ :show, :update ]
+  before_action :find_order, only: [ :show, :edit, :update ]
 
   def new
     @order = Order.new
@@ -12,15 +12,17 @@ class OrdersController < ApplicationController
     @restaurant = Restaurant.find(@meal.restaurant_id)
     if @order.save
       flash[:notice] = "Votre commande a été créée"
-      redirect_to @meal
+      redirect_to users_path(current_user)
     else
-      render 'meals/show'
+      redirect_to meal_path(@meal)
+      flash[:alert] = "Veuillez choisir votre heure de pick-up"
     end
   end
 
   def update
     @order.status = "canceled"
     @order.save!
+    redirect_to users_path(current_user)
   end
 
   def edit
