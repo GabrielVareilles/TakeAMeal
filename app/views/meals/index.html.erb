@@ -1,4 +1,4 @@
-
+<% if @open %>
 
 <%= render partial: "components/jumbottron", locals: { title: "Bonjour, " + current_user.first_name, subtitle: "Aujourd’hui, nous vous proposons les plats suivants:", redirection: "#discover", cta: "Découvrir"} %>
 
@@ -23,7 +23,7 @@
   </div>
 </div>
 
-
+<% else %>
 
 <%= render partial: "components/jumbottron", locals: { title: "Bonjour, " + current_user.first_name, subtitle: "vous pourrez faire votre choix entre 17h et 11h.", redirection: "#discover", cta: "En savoir plus"} %>
 
@@ -35,4 +35,4 @@
   </div>
 </div>
 
-
+<% end %>
