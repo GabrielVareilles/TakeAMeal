@@ -26,7 +26,7 @@
 
 .plans-container h1 {
   display: inline-block;
-  border-bottom: 2px solid grey;
+  // border-bottom: 0.3px solid rgba(0,0,0,0.3);
   padding-bottom:5px;
   font-weight:bold;
 }
@@ -122,13 +122,13 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  background: #FFF5F3;
   padding: 20px 0 20px 0;
+  border-bottom: 4px solid #0ACEA8;
+  border-top: 4px solid #FF6B44;
 }
 
 .wrapper-meals h1 {
   display: inline-block;
-  border-bottom: 2px solid #FF6B44;
   padding-bottom:5px;
   font-weight:bold;
 }
