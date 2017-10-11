@@ -9,7 +9,6 @@ class MealsController < ApplicationController
     @has_order = has_order?
     @restaurant = Restaurant.find(@meal.restaurant_id)
     @order = Order.new
-
   end
 
   private
