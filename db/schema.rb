@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 20171010123628) do
     t.string "name"
     t.string "address"
     t.string "address2"
-    t.string "email_address"
     t.string "phone_number"
     t.string "category"
     t.integer "max_meal"
@@ -100,7 +99,7 @@ ActiveRecord::Schema.define(version: 20171010123628) do
   end
 
   create_table "subscriptions", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.integer "meal_per_month"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -123,7 +122,6 @@ ActiveRecord::Schema.define(version: 20171010123628) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone_number"
-    t.string "email_address"
     t.string "company"
     t.string "post_code"
     t.boolean "admin", default: false, null: false
