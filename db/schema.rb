@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20171010123628) do
   end
 
   create_table "subscriptions", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
     t.integer "meal_per_month"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
