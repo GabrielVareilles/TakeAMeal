@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :find_order, only: [ :show, :update ]
+  before_action :find_order, only: [ :show, :edit, :update ]
 
   def new
     @order = Order.new
@@ -21,6 +21,7 @@ class OrdersController < ApplicationController
   def update
     @order.status = "canceled"
     @order.save!
+    redirect_to users_path(current_user)
   end
 
   def edit

@@ -12,6 +12,16 @@
           <p><%= @meal.description %></p>
         </div>
       </div>
+      <% if @has_order %>
+      <div class = "col-xs-12 col-sm-offset-3 col-sm-2 col-md-offset-0 col-md-5">
+        <div class = "pick-card text-center">
+        <h2>Vous avez déjà fait votre choix</h2>
+          <div class = "pick-card-description">
+            <p> Si vous souhaitez changer de plat, veuillez annuler votre commande actuelle dans la rubrique "Mon compte", puis commander de nouveau.</p>
+          </div>
+        </div>
+      </div>
+      <% else %>
       <div class = "col-xs-12 col-sm-offset-3 col-sm-2 col-md-offset-0 col-md-5">
         <div class = "pick-card text-center">
           <h2> Pick-up </h2>
@@ -21,9 +31,10 @@
           </div>
         </div>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
 
 <!-- col-xs-offset-1
- -->
+-->

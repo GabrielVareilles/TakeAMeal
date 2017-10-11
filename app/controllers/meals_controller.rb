@@ -6,6 +6,7 @@ class MealsController < ApplicationController
   end
 
   def show
+    @has_order = has_order?
     @restaurant = Restaurant.find(@meal.restaurant_id)
     @order = Order.new
   end
@@ -28,5 +29,19 @@ class MealsController < ApplicationController
       return false
     end
     true
+  end
+
+  def has_order?
+    @last_order = Order.where(user_id: current_user.id, status: nil).last
+    if @last_order != nil
+      if @last_order.created_at.day == Date.today.day
+        return true
+      elsif @last_order.created_at.day == Date.today.day - 1
+        if @last_order.created_at >= Time.new(Date.today.year, Date.today.month, Date.today.day - 1, 17, 0, 0, '+02:00')
+          return true
+        end
+      end
+    end
+    return false
   end
 end
