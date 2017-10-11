@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'users/sign_in.scss';
+@import 'users/sign_up.scss';
+
 .user-wrapper {
   padding-top: 50px;
 
