@@ -2,17 +2,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  # GET /resource/sign_up
-=begin  def new
-    super
-    redirect_to subscriptions_path
-  end
+   # GET /resource/sign_up
+  # def new
+  #   super
+  # end
 
   # POST /resource
-  def create
-    super
-    redirect_to subscriptions_path
-  end=end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
@@ -23,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def update
   #   super
   # end
-  #wer
+
   # DELETE /resource
   # def destroy
   #   super
