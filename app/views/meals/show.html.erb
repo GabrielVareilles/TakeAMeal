@@ -5,10 +5,10 @@
   <div class="meal-container">
     <div class="row">
       <div class = " col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-0 col-md-7 ">
-        <div class = "card-meal text-center">
-          <h1><%= @meal.name %></h1>
+        <div class = "card-meal">
+          <h3><%= @meal.name %></h3>
           <div class="img-meal" style="background-image: url('<%@meal.photo%>'); height: 300px width: 450px">
-            </div>
+          </div>
           <p> Description du plat:</p>
           <p><%= @meal.description %></p>
         </div>
