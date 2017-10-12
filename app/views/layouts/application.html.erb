@@ -12,7 +12,7 @@
 
 <body>
   <%= render "components/navbar" %>
-<% if has_subscription? %>
+<% if !has_subscription? %>
 <p>Vous n'êtes pas actuellement abonné. Pour profiter de vos repas préférés: <%= link_to "Abonnez-vous !", subscriptions_path %></p>
 <% end %>
 
