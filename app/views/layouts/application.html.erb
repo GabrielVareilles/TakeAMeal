@@ -3,7 +3,9 @@
 <head>
   <title>Take a Meal</title>
 
-
+<% if has_subscription? %>
+<p>Vous n'êtes pas actuellement abonné. Pour profiter de vos repas préférés: <%= link_to "Abonnez-vous !", subscriptions_path %></p>
+<% end %>
 
   <%= csrf_meta_tags %>
 
