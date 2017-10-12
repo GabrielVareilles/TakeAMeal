@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if resource.is_a?(User)
       meals_path
     elsif resource.is_a?(Restaurant)
-      restaurant_path(current_restaurant)
+      restaurant_path(current_restaurant) #wtf
     else
       restaurants_path
     end
