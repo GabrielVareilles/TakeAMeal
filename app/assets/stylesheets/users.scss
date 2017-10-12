@@ -5,6 +5,10 @@
 @import 'users/sign_in.scss';
 @import 'users/sign_up.scss';
 
+.row {
+  margin: 5px;
+}
+
 .user-wrapper {
   padding-top: 50px;
 
@@ -20,8 +24,8 @@
 .card-user {
   margin-top: 0px;
   margin-bottom: 10px;
-  margin-left: 100px;
-  margin-right: 100px;
+  // margin-left: 0px;
+  // margin-right: 0px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -43,6 +47,60 @@
   // flex: 0 0 0%;
   // width: 500px;
 }
-#meal-photo {
 
+.pack {
+  // width: 450px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 30px;
 }
+
+.pack-text p {
+  margin-bottom: 21px;
+}
+
+.pack-text {
+  padding-top: 20px;
+}
+
+#info-pack {
+  width: 300px;
+  padding-left: 110px;
+}
+
+.card-user h2 {
+  margin-bottom: 30px;
+}
+
+.map {
+  height: 300px;
+}
+
+@media(max-width: 990px) {
+  #info-pack {
+    padding-left: 25px;
+    width: 292px;
+  }
+   .pack {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media(max-width: 500px) {
+
+.card-user h2 {
+  padding-left: 50px;
+}
+
+#below p {
+  padding-left: 50px;
+}
+
+  .card-user {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+

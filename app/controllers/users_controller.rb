@@ -21,6 +21,14 @@ class UsersController < ApplicationController
     @has_order = has_order?
     @order = Order.where(user_id: current_user.id, status: nil).last
 
+    #@flats = Flat.where.not(latitude: nil, longitude: nil)
+    @meal = @order.meal
+    @restaurant = Restaurant.find(@meal.restaurant_id)
+    @hash = Gmaps4rails.build_markers(@restaurant) do |restaurant, marker|
+      marker.lat restaurant.latitude
+      marker.lng restaurant.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def index
