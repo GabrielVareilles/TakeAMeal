@@ -1,6 +1,6 @@
 module ApplicationHelper
   def has_subscription?
-    if current_user != nil # not ok
+    unless current_user.blank?
       @last_order = SubscriptionOrder.where(user_id: current_user.id).last
       if @last_order == nil
         return @last_order
