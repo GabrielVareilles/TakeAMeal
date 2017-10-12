@@ -17,9 +17,7 @@ Restaurant.create!(
   category: "Francais",
   max_meal: 15,
   city: "Lille",
-  post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+  post_code: "59000"
 )
 Restaurant.create!(
   name:         "La truffière",
@@ -32,9 +30,7 @@ Restaurant.create!(
   category: "Hongrois",
   max_meal: 20,
   city: "Lille",
-  post_code: "59000",
-  latitude: 51.630815,
-  longitude: 4.058123
+  post_code: "59000"
 )
 Restaurant.create!(
   name:         "Le pré catelan",
@@ -47,9 +43,7 @@ Restaurant.create!(
     category: "Basque",
   max_meal: 10,
   city: "Lille",
-  post_code: "59000",
-  latitude: 52.630815,
-  longitude: 5.058123
+  post_code: "59000"
 )
 puts 'Finished!'
 
