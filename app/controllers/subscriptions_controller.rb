@@ -20,6 +20,6 @@ class SubscriptionsController < ApplicationController
   private
 
  def subscription_params
-   params.require(:subscription).permit(:type, :meal_per_month)
+   params.require(:subscription).permit(:name, :meal_per_month)
  end
 end
