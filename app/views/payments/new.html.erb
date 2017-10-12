@@ -1,7 +1,8 @@
 <h1>Recapitulatif de votre commande</h1>
+<% @subscription = Subscription.find(@subscription_order.subscription_id)%>
 <h3> <%= @subscription.name %> </h3>
 <h4> Nombre de repas : <%= @subscription.meal_per_month %> </h4>
-<h4> Valeur unitaire : 6,39€</h4>
+
 
 <%= form_tag subscriptions_order_payments_path(@subscription_order) do %>
   <article>
@@ -17,3 +18,4 @@
     data-amount="<%= @subscription_order.amount_cents %>"
     data-currency="<%= @subscription_order.amount.currency %>"></script>
 <% end %>
+
