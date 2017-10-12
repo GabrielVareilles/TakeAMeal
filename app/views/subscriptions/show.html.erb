@@ -1,20 +1,80 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1><%= @subscription.name %></h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <%= image_tag("pizza.jpg", width: '100%') %>
-    </div>
-    <div class="col-sm-12 col-md-6">
-      <p>Some awesome description of our amazing subscription.</p>
-      <p>Prix: <%= humanized_money_with_symbol(@subscription.price_cents) %></p>
-      <%= form_tag subscriptions_orders_path do %>
-        <%= hidden_field_tag 'subscription_id', @subscription.id %>
-        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-      <% end %>
+<% if @subscription.id == 2 %>
+<div class="subscription-wrapper">
+  <div id="subscription" class="plans-container">
+    <h1> Vous avez choisi l'offre suivante: </h1>
+    <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div class="card-category">
+            <div class="upper-card">
+              <h4>20 Repas</h4>
+              <%= image_tag "pizza.jpg", :class => "style_image" %>
+            </div>
+            <div class="card-prix">
+              <p> Jusqu’à 20 déjeuners par cycle</p>
+              <p>5,99€ par repas</p>
+            </div>
+            <%= form_tag subscriptions_orders_path do %>
+            <% @subscription.id = 2 %>
+            <%= hidden_field_tag 'subscription_id', @subscription.id %>
+            <%= submit_tag 'poursuivre', class: 'btn btn-sub' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<% else %>
+
+<div class="subscription-wrapper">
+  <div id="subscription" class="plans-container">
+    <h1> Vous avez choisi l'offre suivante: </h1>
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6">
+        <% if @subscription.id == 1 %>
+        <div class="card-category active">
+          <% else %>
+          <div class="card-category">
+            <% end %>
+            <div class="upper-card">
+              <h4> 12 Repas </h4>
+              <%= image_tag "sandwichs.jpg", :class => "style_image" %>
+            </div>
+            <div class="card-prix">
+              <p> Jusqu’à 12 déjeuners par cycle</p>
+              <p>6,39€ par repas</p>
+            </div>
+            <%= form_tag subscriptions_orders_path do %>
+            <%= hidden_field_tag 'subscription_id', @subscription.id %>
+            <%= submit_tag 'Poursuivre', class: 'btn btn-sub' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <% if @subscription.id == 2 %>
+          <div class="card-category active">
+            <% else %>
+            <div class="card-category">
+              <% end %>
+              <div class="upper-card">
+                <h4>20 Repas</h4>
+                <%= image_tag "pizza.jpg", :class => "style_image" %>
+              </div>
+              <div class="card-prix">
+                <p> Jusqu’à 20 déjeuners par cycle</p>
+                <p>5,99€ par repas</p>
+              </div>
+              <%= form_tag subscriptions_orders_path do %>
+              <% @subscription.id = 2 %>
+              <%= hidden_field_tag 'subscription_id', @subscription.id %>
+              <%= submit_tag 'Je Choisis plutôt cet abonnement', class: 'btn btn-sub' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<% end %>
