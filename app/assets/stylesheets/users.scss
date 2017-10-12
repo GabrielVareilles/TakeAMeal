@@ -70,10 +70,27 @@
 
 .card-user h2 {
   margin-bottom: 30px;
+  padding-left: 15px;
 }
 
 .map {
   height: 300px;
+}
+
+.no-command h4 {
+  font-size: 28px;
+}
+
+.no-command h5 {
+  font-size: 23px;
+}
+
+.no-command {
+  margin-bottom: 50px;
+}
+
+.img-meal {
+  margin-bottom: 20px;
 }
 
 @media(max-width: 990px) {
@@ -90,7 +107,7 @@
 @media(max-width: 500px) {
 
 .card-user h2 {
-  padding-left: 50px;
+  padding-left: 20px;
 }
 
 #below p {
@@ -103,4 +120,11 @@
   }
 }
 
+@media(max-width: 770px) {
+  .img-meal {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+}
 
