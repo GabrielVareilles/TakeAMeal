@@ -18,6 +18,8 @@ r = Restaurant.create!(
   max_meal: 15,
   city: "Lille",
   post_code: "59000",
+  latitude: 50.630815,
+  longitude: 3.058123
 )
 r.remote_photo_url = "https://www.cote2boeuf.fr/le-blog/wp-content/uploads/2016/09/IMG_7813.jpg"
 r.save
@@ -34,6 +36,8 @@ r = Restaurant.create!(
   max_meal: 20,
   city: "Lille",
   post_code: "59000",
+  latitude: 51.630815,
+  longitude: 4.058123
 )
 r.remote_photo_url = "http://lesgrappes.leparisien.fr/wp-content/uploads/2015/12/16821015905_2b6b543f91_c-compressor.jpg"
 r.save
@@ -49,6 +53,8 @@ r = Restaurant.create!(
   max_meal: 10,
   city: "Lille",
   post_code: "59000",
+  latitude: 52.630815,
+  longitude: 5.058123
 )
 r.remote_photo_url = "http://static.cuisineaz.com/680x357/i67198-specialites-basques.jpg"
 r.save
@@ -64,6 +70,8 @@ r = Restaurant.create!(
   max_meal: 15,
   city: "Lille",
   post_code: "59000",
+  latitude: 53.630815,
+  longitude: 6.058123
 )
 r.remote_photo_url = "https://image.afcdn.com/recipe/20141014/47748_w420h344c1cx800cy800.jpg"
 r.save
@@ -79,6 +87,8 @@ r = Restaurant.create!(
   max_meal: 20,
   city: "Lille",
   post_code: "59000",
+  latitude: 54.630815,
+  longitude: 7.058123
 )
 r.remote_photo_url = "https://www.atelierdeschefs.com/media/recette-e15183-salade-grecque.jpg"
 r.save
@@ -94,6 +104,8 @@ r = Restaurant.create!(
   max_meal: 10,
   city: "Lille",
   post_code: "59000",
+  latitude: 55.630815,
+  longitude: 8.058123
 )
 r.remote_photo_url = "http://storenotrefamilleprod.blob.core.windows.net/images/cms/recette/13314/13314_large.jpg"
 r.save
@@ -109,6 +121,8 @@ r = Restaurant.create!(
   max_meal: 15,
   city: "Lille",
   post_code: "59000",
+  latitude: 59.630815,
+  longitude: 10.058123
 )
 r.remote_photo_url = "http://img.taste.com.au/vOr3IetI/taste/2016/11/pea-and-brie-quiche-80007-1.jpeg"
 r.save
@@ -124,6 +138,8 @@ r = Restaurant.create!(
   max_meal: 20,
   city: "Lille",
   post_code: "59000",
+  latitude: 60.630815,
+  longitude: 11.058123
 )
 r.remote_photo_url = "https://eatzer.com/wp-content/uploads/2016/09/awesome-sushi-720x513.jpg"
 r.save
@@ -139,6 +155,8 @@ r = Restaurant.create!(
   max_meal: 10,
   city: "Lille",
   post_code: "59000",
+  latitude: 61.630815,
+  longitude: 12.058123
 )
 r.remote_photo_url = "https://thesushistation.files.wordpress.com/2015/08/wpid-img_6245.jpg"
 r.save

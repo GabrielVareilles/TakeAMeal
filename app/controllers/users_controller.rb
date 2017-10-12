@@ -22,8 +22,8 @@ class UsersController < ApplicationController
     @order = Order.where(user_id: current_user.id, status: nil).last
 
     #@flats = Flat.where.not(latitude: nil, longitude: nil)
-    # @meal = @order.meal
-    # @restaurant = Restaurant.find(@mymeal.restaurant_id)
+    @meal = @order.meal
+    @restaurant = Restaurant.find(@meal.restaurant_id)
     @hash = Gmaps4rails.build_markers(@restaurant) do |restaurant, marker|
       marker.lat restaurant.latitude
       marker.lng restaurant.longitude
