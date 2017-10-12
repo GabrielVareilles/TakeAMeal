@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20171012104620) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price_cents", default: 0, null: false
+    t.string "stripe_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -129,6 +130,7 @@ ActiveRecord::Schema.define(version: 20171012104620) do
     t.string "company"
     t.string "post_code"
     t.boolean "admin", default: false, null: false
+    t.string "stripe_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -6,19 +6,24 @@ before_action :set_order
   end
 
   def create
-    customer = Stripe::Customer.create(
-      source: params[:stripeToken],
-      email:  params[:stripeEmail]
+    if current_user.stripe_id == nil
+      customer = Stripe::Customer.create(
+        source: params[:stripeToken],
+        email:  current_user.email
+      )
+      current_user.stripe_id = customer.id
+    end
+    @subscription = Subscription.find(@subscription_order.subscription_id)
+    abonnement = Stripe::Subscription.create(
+      customer:     current_user.stripe_id,
+      items: [
+          {
+            :plan => @subscription.stripe_id
+          },
+        ],
     )
 
-    charge = Stripe::Charge.create(
-      customer:     customer.id,   # You should store this customer id and re-use it.
-      amount:       @subscription_order.amount_cents,
-      description:  "Paiement de l'abonnement #{@subscription_order.subscription.name}, commande #{@subscription_order.id}",
-      currency:     @subscription_order.amount.currency
-    )
-
-    @subscription_order.update(payment: charge.to_json, state: 'paid')
+    @subscription_order.update(payment: abonnement.to_json, state: 'paid')
     redirect_to subscriptions_order_path(@subscription_order)
 
   rescue Stripe::CardError => e
