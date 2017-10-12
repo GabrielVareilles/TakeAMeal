@@ -8,6 +8,6 @@ class SubscriptionsOrdersController < ApplicationController
   end
 
   def show
-  @subscription_order = SubscriptionOrder.where(state: 'paid').find(params[:id])
+  # @subscription_order = SubscriptionOrder.where(state: 'paid').find(params[:id])
   end
 end
