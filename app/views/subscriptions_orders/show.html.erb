@@ -1,9 +1,7 @@
-<h1>Votre abonnement est maintenant valable !</h1>
-<h3>N'hesitez pas a consulter les differents repas que l on vous propose tous les jours.</h3>
-<a class="btn btn-primary" href="/meals">Decouvrir</a>
-
-<h4> Recapitulatif de votre commande</h4>
-<ul>
-  <li>Status: <%= @subscription_order.state %></li>
-  <li>Montant: <%= humanized_money_with_symbol(@subscription_order.amount) %></li>
-<ul>
+<div class="subscribed-wrapper">
+  <div class="container">
+    <h1>Votre abonnement est maintenant valable !</h1>
+    <h3>Vous pouvez dès à présent faire votre commande pour votre prochain déjeuner.</h3>
+    <a class="btn btn-primary" href="/meals">Découvrir</a>
+  </div>
+</div>

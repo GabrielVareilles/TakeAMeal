@@ -1,21 +1,28 @@
-<h1>Recapitulatif de votre commande</h1>
-<% @subscription = Subscription.find(@subscription_order.subscription_id)%>
-<h3> <%= @subscription.name %> </h3>
-<h4> Nombre de repas : <%= @subscription.meal_per_month %> </h4>
+<div class="recap-wrapper">
+  <div class="container">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="ticket">
+        <h1>Recapitulatif de votre commande</h1>
+        <h3> <%= @subscription.name %> </h3>
+        <h4> Nombre de repas : <%= @subscription.meal_per_month %> </h4>
+        <h4> Valeur unitaire : 6,39€</h4>
 
-
-<%= form_tag subscriptions_order_payments_path(@subscription_order) do %>
-  <article>
-    <label class="amount">
-      <h3><b><span>Prix des <%= @subscription.meal_per_month %> repas :  <%= humanized_money_with_symbol(@subscription_order.amount) %></span></b></h3>
-    </label>
-  </article>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="Ma commande"
-    data-email="<%= current_user.email %>"
-    data-description="Commande: <%= @subscription.name %>"
-    data-amount="<%= @subscription_order.amount_cents %>"
-    data-currency="<%= @subscription_order.amount.currency %>"></script>
-<% end %>
+        <%= form_tag subscriptions_order_payments_path(@subscription_order) do %>
+        <article>
+          <label class="amount">
+            <h3><b><span>Prix des <%= @subscription.meal_per_month %> repas :  <%= humanized_money_with_symbol(@subscription_order.amount) %></span></b></h3>
+          </label>
+        </article>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-name="Ma commande"
+        data-email="<%= current_user.email %>"
+        data-description="Commande: <%= @subscription.name %>"
+        data-amount="<%= @subscription_order.amount_cents %>"
+        data-currency="<%= @subscription_order.amount.currency %>"></script>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
