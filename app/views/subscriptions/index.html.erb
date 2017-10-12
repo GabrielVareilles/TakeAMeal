@@ -1,16 +1,39 @@
-<div class="container">
+<div class="subscription-wrapper">
+<div id="subscription" class="plans-container">
+  <h1> Choisissez la formule qui vous convient </h1>
   <div class="row">
-    <h1>Abonnements</h1>
-    <% @subscriptions.each do |subscription| %>
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <%= link_to image_tag("https://place-hold.it/200x200"), subscription_path(subscription) %>
-          <div class="caption">
-            <h3><%= link_to subscription.name, subscription_path(subscription) %></h3>
-            <p>Prix: <%= humanized_money_with_symbol(subscription.price_cents) %></p>
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-category">
+        <div class="upper-card">
+          <h4> 12 repas </h4>
+          <%= image_tag "sandwichs.jpg", :class => "style_image" %>
+        </div>
+        <div class="card-prix">
+          <p> Jusqu’à 12 déjeuners par cycle</p>
+          <p>6,39€ par repas</p>
+        </div>
+        <%= form_tag subscriptions_orders_path do %>
+        <%= hidden_field_tag 'subscription_id', 1 %>
+        <%= submit_tag 'Choisir cette offre', class: 'btn btn-sub' %>
+        <% end %>
+      </div>
+    </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="card-category">
+          <div class="upper-card">
+            <h4>20 repas</h4>
+            <%= image_tag "pizza.jpg", :class => "style_image" %>
           </div>
+          <div class="card-prix">
+            <p> Jusqu’à 20 déjeuners par cycle</p>
+            <p>5,99€ par repas</p>
+          </div>
+          <%= form_tag subscriptions_orders_path do %>
+          <%= hidden_field_tag 'subscription_id', 2 %>
+          <%= submit_tag 'Choisir cette offre', class: 'btn btn-sub' %>
+          <% end %>
         </div>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
