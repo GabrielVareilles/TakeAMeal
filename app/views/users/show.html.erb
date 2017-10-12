@@ -7,15 +7,12 @@
     <div class="row">
       <div class = "col-xs-12">
         <div class = "card-user">
-          <h2> Ma commande </h2>
           <% if @has_order %>
             <div class="row">
+              <h2> Ma commande </h2>
             <div class = "col-xs-12 col-sm-8 col-sm-6 col-md-offset-0 col-md-6 col-lg-4">
-              <div id= "below" class = "pack">
                 <% @meal = @order.meal %>
-                <div class="img-meal" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 350px; width: 400px;">
-                <p> Votre <%= @order.meal.name %> vous attend...  </p>
-              </div>
+                <div class="img-meal" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 350px; width: 400px;"></div>
             </div>
             <div class = "col-xs-12 col-sm-4 col-md-6 col-lg-4">
               <div id="info-pack" class="pack">
@@ -53,15 +50,18 @@
           </div>
 
           <% else %>
-
-          <h4>Vous n'avez pas encore commandé votre prochain repas.</h4>
-          <h5>Commandez dès maintenant en <%= link_to 'Cliquant ici', meals_path %></h5>
+          <div class= "col-xs-12">
+            <div class ="no-command text-center">
+              <h4>Vous n'avez pas encore commandé votre prochain repas.</h4>
+              <h5>Commandez dès maintenant en <%= link_to 'Cliquant ici', meals_path %></h5>
+            </div>
+          </div>
           <% end %>
         </div>
       </div>
       <div class= "col-xs-12">
         <div class = "card-user">
-          <h2> Mes informations </h2>
+           <h2> Mes informations </h2>
         </div>
       </div>
       <div class = "col-xs-offset-1 col-xs-10 ">
@@ -91,6 +91,7 @@
     </div>
   </div>
   </div>
+
 
 <!-- count number of orders wich timestamp is included in the current month -->
 
