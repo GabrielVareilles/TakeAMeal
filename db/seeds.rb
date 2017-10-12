@@ -10,9 +10,7 @@ r = Restaurant.create!(
   category: "Francais",
   max_meal: 15,
   city: "Lille",
-  post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+  post_code: "59000"
 )
 r.remote_photo_url = "https://www.cote2boeuf.fr/le-blog/wp-content/uploads/2016/09/IMG_7813.jpg"
 r.save
@@ -28,9 +26,7 @@ r = Restaurant.create!(
   category: "Hongrois",
   max_meal: 20,
   city: "Lille",
-  post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+  post_code: "59000"
 )
 r.remote_photo_url = "http://lesgrappes.leparisien.fr/wp-content/uploads/2015/12/16821015905_2b6b543f91_c-compressor.jpg"
 r.save
@@ -45,9 +41,7 @@ r = Restaurant.create!(
   category: "Basque",
   max_meal: 10,
   city: "Lille",
-  post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+  post_code: "59000"
 )
 r.remote_photo_url = "http://static.cuisineaz.com/680x357/i67198-specialites-basques.jpg"
 r.save
@@ -62,9 +56,7 @@ r = Restaurant.create!(
   category: "Francais",
   max_meal: 15,
   city: "Lille",
-  post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+  post_code: "59000"
 )
 r.remote_photo_url = "https://image.afcdn.com/recipe/20141014/47748_w420h344c1cx800cy800.jpg"
 r.save
@@ -79,9 +71,7 @@ r = Restaurant.create!(
   category: "Grec",
   max_meal: 20,
   city: "Lille",
-  post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+  post_code: "59000"
 )
 r.remote_photo_url = "https://www.atelierdeschefs.com/media/recette-e15183-salade-grecque.jpg"
 r.save
@@ -96,9 +86,7 @@ r = Restaurant.create!(
   category: "Indien",
   max_meal: 10,
   city: "Lille",
-  post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+  post_code: "59000"
 )
 r.remote_photo_url = "http://storenotrefamilleprod.blob.core.windows.net/images/cms/recette/13314/13314_large.jpg"
 r.save
@@ -113,9 +101,7 @@ r = Restaurant.create!(
   category: "Francais",
   max_meal: 15,
   city: "Lille",
-  post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+  post_code: "59000"
 )
 r.remote_photo_url = "http://img.taste.com.au/vOr3IetI/taste/2016/11/pea-and-brie-quiche-80007-1.jpeg"
 r.save
@@ -130,9 +116,7 @@ r = Restaurant.create!(
   category: "Japonais",
   max_meal: 20,
   city: "Lille",
-  post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+  post_code: "59000"
 )
 r.remote_photo_url = "https://eatzer.com/wp-content/uploads/2016/09/awesome-sushi-720x513.jpg"
 r.save
@@ -147,9 +131,7 @@ r = Restaurant.create!(
   category: "Japonais",
   max_meal: 10,
   city: "Lille",
-  post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+  post_code: "59000"
 )
 r.remote_photo_url = "https://thesushistation.files.wordpress.com/2015/08/wpid-img_6245.jpg"
 r.save
