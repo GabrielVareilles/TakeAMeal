@@ -10,6 +10,18 @@
           <h2> Ma commande </h2>
           <% if @has_order %>
 
+          <%= link_to 'annuler ma commande', meal_order_path(@order.meal, @order), method: :put, confirm: 'Are you sure?' %>
+          <% @meal = @order.meal %>
+          <div class="img-meal" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 350px; width: 400px;">
+            </div>
+          <h4><b>Informations: </b></h4>
+          <% @restaurant = Restaurant.find(@meal.restaurant_id) %>
+          <p><b>Restaurant : </b> <%= @restaurant.name %></p>
+          <p><b>Adresse : </b><%= @restaurant.address %>&nbsp;&nbsp;&nbsp;&nbsp;<%= @restaurant.post_code %> <%= @restaurant.city %></p>
+          <p><b>Telephone : </b><%= @restaurant.phone_number %></p>
+          <p></p>
+          <p></p>
+          <p>Vous devez passer sur le creneau : <b><%= @order.pick_up_time %></b></p>
           <% else %>
 
           <h4>Vous n'avez pas encore commandé votre prochain repas.</h4>
