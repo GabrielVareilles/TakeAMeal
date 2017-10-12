@@ -9,19 +9,48 @@
         <div class = "card-user">
           <h2> Ma commande </h2>
           <% if @has_order %>
-
-          <%= link_to 'annuler ma commande', meal_order_path(@order.meal, @order), method: :put, confirm: 'Are you sure?' %>
-          <% @meal = @order.meal %>
-          <div class="img-meal" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 350px; width: 400px;">
+            <div class="row">
+            <div class = "col-xs-12 col-sm-8 col-sm-6 col-md-offset-0 col-md-6 col-lg-4">
+              <div id= "below" class = "pack">
+                <img src="https://place-hold.it/450x300" style="height: 300px; width: 450px" >
+                <p> Votre <%= @order.meal.name %> vous attend...  </p>
+              </div>
             </div>
-          <h4><b>Informations: </b></h4>
-          <% @restaurant = Restaurant.find(@meal.restaurant_id) %>
-          <p><b>Restaurant : </b> <%= @restaurant.name %></p>
-          <p><b>Adresse : </b><%= @restaurant.address %>&nbsp;&nbsp;&nbsp;&nbsp;<%= @restaurant.post_code %> <%= @restaurant.city %></p>
-          <p><b>Telephone : </b><%= @restaurant.phone_number %></p>
-          <p></p>
-          <p></p>
-          <p>Vous devez passer sur le creneau : <b><%= @order.pick_up_time %></b></p>
+            <div class = "col-xs-12 col-sm-4 col-md-6 col-lg-4">
+              <div id="info-pack" class="pack">
+                <h4><b>Informations pratiques: </b></h4>
+                <div class="pack-text">
+                  <p><b>Votre plat : </b><%= @order.meal.name %></p>
+                  <p><b>Votre créneau : </b><%= @order.pick_up_time %></p>
+                  <% @meal = @order.meal %>
+                  <% @restaurant = Restaurant.find(@meal.restaurant_id) %>
+                  <p><b>Restaurant :  </b><%= @restaurant.name %></p>
+                  <p><b>Adresse :  </b><%= @restaurant.address %>,&nbsp;&nbsp;&nbsp;<%= @restaurant.post_code %>,&nbsp; <%= @restaurant.city %></p>
+                  <p><b>Telephone :  </b><%= @restaurant.phone_number %></p>
+                  <%= link_to 'annuler ma commande', meal_order_path(@order.meal, @order), method: :put, confirm: 'Are you sure?' %>
+                </div>
+              </div>
+            </div>
+            <div class ="col-xs-12 col-md-12 col-lg-4">
+              <div id="map" style="height: 300px;"></div>
+                <% content_for(:after_js) do %>
+                  <%= javascript_tag do %>
+                    var handler = Gmaps.build('Google');
+                    handler.buildMap({ internal: { id: 'map' } }, function() {
+                      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+                      handler.bounds.extendWith(markers);
+                      handler.fitMapToBounds();
+                      if (markers.length == 0) {
+                        handler.getMap().setZoom(2);
+                      } else if (markers.length == 1) {
+                        handler.getMap().setZoom(14);
+                      }
+                    });
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+
           <% else %>
 
           <h4>Vous n'avez pas encore commandé votre prochain repas.</h4>
