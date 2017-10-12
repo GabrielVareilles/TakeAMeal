@@ -1,0 +1,11 @@
+.recap-wrapper {
+padding: 50px 0px 100px 0px;
+}
+
+.ticket, .stripe-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+

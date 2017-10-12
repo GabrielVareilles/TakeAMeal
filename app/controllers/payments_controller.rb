@@ -2,7 +2,7 @@ class PaymentsController < ApplicationController
 before_action :set_order
 
   def new
-    @subscription = Subscription.find(current_user.id)
+    @subscription = Subscription.find(1)
   end
 
   def create
