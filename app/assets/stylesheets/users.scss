@@ -5,20 +5,22 @@
 @import 'users/sign_in.scss';
 @import 'users/sign_up.scss';
 
-.photo-show {
-  text-align: center;
-}
-
 .user-wrapper {
   padding-top: 30px;
-
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
 }
 
 .user-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
 
+.wide {
+  width: 100%
 }
 
 #info-pack h3 {
@@ -58,31 +60,33 @@
 }
 
 .pack {
-  // width: 450px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
+  a {
+    background: #FF6A44;
+    border-color: #FF6A44;
+    color: #fff;
+    padding: 10px;
+    &:hover {
+      background: #F24315;
+      border-color: #F24315;
+    }
+  }
 }
 
 .pack-text p {
   margin-bottom: 20px;
 }
 
-
-#info-pack {
-  width: 300px;
-  padding-left: 50px;
+.img-stuff {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
-.card-user h2 {
-  margin-bottom: 45px;
-  padding-left: 15px;
-  text-align: center;
-}
-
-.map {
+.show {
   height: 300px;
-}
+  padding-top: 10px; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+  }
 
 // .show {
 //   width: 405.66px;
@@ -110,7 +114,7 @@
   #info-pack {
     width: 300px;
   }
-   .pack {
+  .pack {
     margin-left: auto;
     margin-right: auto;
   }
@@ -118,13 +122,13 @@
 
 @media(max-width: 500px) {
 
-.card-user h2 {
-  padding-left: 20px;
-}
+  .card-user h2 {
+    padding-left: 20px;
+  }
 
-#below p {
-  padding-left: 50px;
-}
+  #below p {
+    padding-left: 50px;
+  }
 
   .card-user {
     margin-left: 5px;
@@ -148,14 +152,8 @@
   }
 }
 
-// @media(min-width: 770px) {
-//   #info-pack {
-//     padding-top: 70px;
-//   }
-// }
-
-// @media(min-width: 990px) {
-//   .show {
-//     padding-top: 82px;
-//   }
-// }
+.user-infos-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
