@@ -78,10 +78,20 @@
   </div>
   <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-2">
     <h2>Mon abonnement</h2>
-    <% @subscription = subscription_order.current_user_id %>
-    <p>Type d'abonnement: </p>
-    <p>Prochaine échéance:</p>
-    <p>Nombre de plats restant ce mois-ci:</p>
+    <table class="table table-hover">
+      <tr>
+        <th>type d'abonnement</th>
+        <th>Lorem Ipsum</th>
+      </tr>
+      <tr>
+        <td>prochaine échéance</td>
+        <td>22 Novembre 2017</td>
+      </tr>
+      <tr>
+        <td>Nombre de plats restant ce mois-ci</td>
+        <td>12</td>
+      </tr>
+    </table>
     <a href="#">Mettre fin à mon abonnement</a>
   </div>
 </div>
