@@ -64,21 +64,31 @@
 
 <div class ="user-infos-container">
   <div class="row wide">
-  <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-2">
-    <table class="table table-hover">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+     <h2> Mes informations </h2>
+     <table class="table table-hover">
       <tr>
-        <th>type d'abonnement</th>
-        <th>Lorem Ipsum</th>
+        <th>Prénom</th>
+        <th><%= current_user.first_name %></th>
       </tr>
       <tr>
-        <td>prochaine échéance</td>
-        <td>22 Novembre 2017</td>
+        <td>Nom</td>
+        <td><%= current_user.last_name %></td>
       </tr>
       <tr>
-        <td>Nombre de plats restant ce mois-ci</td>
-        <td>12</td>
+        <td>Email</td>
+        <td><%= current_user.email %></td>
+      </tr>
+      <tr>
+        <td>Téléphone</td>
+        <td><%= current_user.phone_number %></td>
+      </tr>
+      <tr>
+        <td>Code Postal</td>
+        <td><%= current_user.post_code %></td>
       </tr>
     </table>
+    <div class="info-links">
       <p><%= link_to 'Editer mes informations', edit_user_registration_path(current_user) %></p>
       <p><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></p>
     </div>
