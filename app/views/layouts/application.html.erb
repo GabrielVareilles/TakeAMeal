@@ -13,10 +13,6 @@
 <body>
   <%= render "components/navbar" %>
 
-  <% if !has_subscription? %>
-  <%= render "components/subscribebanner" %>
-    <% end %>
-
     <%= render 'users/shared/flashes' %>
     <%= yield %>
     <%= render "components/footer" %>
