@@ -64,7 +64,7 @@
 
 <div class ="user-infos-container">
   <div class="row wide">
-  <div class="col-xs-12 col-sm-3 col-sm-offset-2">
+  <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-2">
      <h2> Mes informations </h2>
      <p> <b>Prenom : </b> <%= current_user.first_name %></p>
      <p> <b>Nom : </b><%= current_user.last_name %></p>
@@ -76,7 +76,7 @@
       <p><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></p>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-3 col-sm-offset-2">
+  <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-2">
     <h2>Mon abonnement</h2>
     <p>Type d'abonnement: </p>
     <p>Prochaine échéance:</p>
