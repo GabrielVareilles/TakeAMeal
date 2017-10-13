@@ -4,98 +4,89 @@
 </div>
 <div class="user-wrapper">
   <div class="user-container">
-    <div class="row">
-      <div class = "col-xs-12">
-        <div class = "card-user">
-          <% if @has_order %>
+    <div class="row wide">
+      <% if @has_order %>
+      <div class = "col-xs-12 col-sm-7 col-md-6 col-lg-4">
+        <div class="img-stuff">
           <h2> Ma commande </h2>
-            <div id="special-row" class="row">
-            <div class = "col-xs-12 col-sm-7 col-md-6 col-lg-4">
-              <div class ="photo-show">
-                <% @meal = @order.meal %>
-                <div class="img-meal" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 300px; width: 450px;"></div>
-              </div>
-            </div>
-            <div class = "col-xs-12 col-sm-5 col-md-6 col-lg-4">
-              <div id="info-pack" class="pack">
-                <h3><b>Informations pratiques: </b></h3>
-                <hr>
-                <div class="pack-text">
-                  <p><b>Votre plat : </b><%= @order.meal.name %></p>
-                  <p><b>Votre créneau : </b><%= @order.pick_up_time %></p>
-                  <% @meal = @order.meal %>
-                  <% @restaurant = Restaurant.find(@meal.restaurant_id) %>
-                  <p><b>Restaurant :  </b><%= @restaurant.name %></p>
-                  <p><b>Adresse :  </b><%= @restaurant.address %>,&nbsp;&nbsp;&nbsp;<%= @restaurant.post_code %>,&nbsp; <%= @restaurant.city %></p>
-                  <p><b>Telephone :  </b><%= @restaurant.phone_number %></p>
-                  <%= link_to 'annuler ma commande', meal_order_path(@order.meal, @order), method: :put, confirm: 'Are you sure?' %>
-                </div>
-              </div>
-            </div>
-            <div class ="col-xs-12 col-md-12 col-lg-4">
-              <div class="show">
-                <div id="map" style="height: 300px;"></div>
-              </div>
-                <% content_for(:after_js) do %>
-                  <%= javascript_tag do %>
-                    var handler = Gmaps.build('Google');
-                    handler.buildMap({ internal: { id: 'map' } }, function() {
-                      markers = handler.addMarkers(<%= raw @hash.to_json %>);
-                      handler.bounds.extendWith(markers);
-                      handler.fitMapToBounds();
-                      if (markers.length == 0) {
-                        handler.getMap().setZoom(2);
-                      } else if (markers.length == 1) {
-                        handler.getMap().setZoom(14);
-                      }
-                    });
-                <% end %>
-              <% end %>
-            </div>
+          <% @meal = @order.meal %>
+          <div class="img-meal img-responsive" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 250px; width: 300px;"></div>
+        </div>
+      </div>
+      <div class = "col-xs-12 col-sm-5 col-md-6 col-lg-4">
+        <div id="info-pack" class="pack">
+          <h3><b>Informations pratiques</b></h3>
+          <hr>
+          <div class="pack-text">
+            <p><b>Votre plat : </b><%= @order.meal.name %></p>
+            <p><b>Votre créneau : </b><%= @order.pick_up_time %></p>
+            <% @meal = @order.meal %>
+            <% @restaurant = Restaurant.find(@meal.restaurant_id) %>
+            <p><b>Restaurant :  </b><%= @restaurant.name %></p>
+            <p><b>Adresse :  </b><%= @restaurant.address %>,&nbsp;&nbsp;&nbsp;<%= @restaurant.post_code %>,&nbsp; <%= @restaurant.city %></p>
+            <p><b>Telephone :  </b><%= @restaurant.phone_number %></p>
+            <%= link_to 'annuler ma commande', meal_order_path(@order.meal, @order), method: :put, confirm: 'Are you sure?' %>
           </div>
+        </div>
+      </div>
+      <div class ="col-xs-12 col-lg-4">
+        <div class="show">
+          <div id="map" style="height: 300px;"></div>
+        </div>
+        <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+        var handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+        handler.getMap().setZoom(2);
+      } else if (markers.length == 1) {
+      handler.getMap().setZoom(14);
+    }
+  });
+  <% end %>
+  <% end %>
+</div>
 
-          <% else %>
-          <div class= "col-xs-12">
-            <div class ="no-command text-center">
-              <h4>Vous n'avez pas encore commandé votre prochain repas.</h4>
-              <h5>Commandez dès maintenant en <%= link_to 'Cliquant ici', meals_path %></h5>
-            </div>
-          </div>
-          <% end %>
-        </div>
-      </div>
-      <div class= "col-xs-12">
-        <div class = "card-user">
-           <h2> Mes informations </h2>
-        </div>
-      </div>
-      <div class = "col-xs-offset-1 col-xs-10 ">
-        <div class = "card-user pack">
-          <div class ="row">
-          <p></p>
-          <p></p>
-          <div class = "col-xs-6 col-sm-4">
-            <p> <b>Prenom : </b> <%= current_user.first_name %></p>
-            <p> <b>Nom : </b><%= current_user.last_name %></p>
-            <p> <b>Email : </b><%= current_user.email %></p>
-          </div>
-          <div class = "col-xs-6 col-sm-4">
-            <p> <b>Telephone : </b><%= current_user.phone_number %></p>
-            <p> <b>Code Postal: </b><%= current_user.post_code %></p>
-          </div>
-          <div class = "col-xs-6 col-sm-4">
-            <div class="info-links">
-              <p><%= link_to 'Mon abonnement', edit_user_registration_path(current_user) %></p>
-              <p><%= link_to 'Editer mes informations', edit_user_registration_path(current_user) %></p>
-              <p><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
+<% else %>
+<div class= "col-xs-12">
+  <div class ="no-command text-center">
+    <h4>Vous n'avez pas encore commandé votre prochain repas.</h4>
+    <h5>Commandez dès maintenant en <%= link_to 'Cliquant ici', meals_path %></h5>
+  </div>
+</div>
+<% end %>
+</div>
+</div>
+</div>
+
+<div class ="user-infos-container">
+  <div class="row wide">
+  <div class="col-xs-12 col-sm-3 col-sm-offset-2">
+     <h2> Mes informations </h2>
+     <p> <b>Prenom : </b> <%= current_user.first_name %></p>
+     <p> <b>Nom : </b><%= current_user.last_name %></p>
+     <p> <b>Email : </b><%= current_user.email %></p>
+     <p> <b>Telephone : </b><%= current_user.phone_number %></p>
+     <p> <b>Code Postal: </b><%= current_user.post_code %></p>
+     <div class="info-links">
+      <p><%= link_to 'Editer mes informations', edit_user_registration_path(current_user) %></p>
+      <p><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></p>
     </div>
   </div>
+  <div class="col-xs-12 col-sm-3 col-sm-offset-2">
+    <h2>Mon abonnement</h2>
+    <p>Type d'abonnement: </p>
+    <p>Prochaine échéance:</p>
+    <p>Nombre de plats restant ce mois-ci:</p>
+    <a href="#">Mettre fin à mon abonnement</a>
   </div>
+</div>
+</div>
+
+
 
 
 <!-- count number of orders wich timestamp is included in the current month -->
