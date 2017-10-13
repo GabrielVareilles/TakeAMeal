@@ -25,7 +25,11 @@
     <% @orders.each do |o| %>
     <% @user = User.where(id: o.user_id).first %>
     <% i = i+1 %>
+    <% if o.status == "canceled" %>
+    <tr class="line_through">
+    <% else %>
     <tr>
+    <% end %>
       <td><%= i %></td>
       <td><%= o.id %></td>
       <th><%= @meal.name %></th>
