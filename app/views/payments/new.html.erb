@@ -3,13 +3,14 @@
   <div id="payment-container" class="container">
   <h1>Récapitulatif de votre commande</h1>
     <div class="row">
-      <div class="col-md-12 col-sm-12 single-item">
+      <div class="col-md-12 col-sm-12 text-center">
         <div class="row">
-          <div class="col-md-6 col-sm-6">
+          <div class="col-md-6 col-sm-6 text-center">
             <div id="itemsingle" class="carousel slide clearfix img-responsive" style="background: url(https://www.petitfute.com/medias/mag/10734/835/7727-10-le-coq-au-vin-quoi.jpg); background-position: center; background-size: cover; background-repeat: no-repeat; height: 300px; width: 450px; margin-left: 0px; margin-top: 0px;">
             </div>
           </div>
-          <div class="col-md-5 col-sm-5 recap">
+          <div class="col-md-6 col-sm-6">
+            <div class="recap">
             <% @subscription = Subscription.find(@subscription_order.subscription_id)%>
             <h3> <b><%= @subscription.name %></b></h3>
             <h5> Nombre de repas : <%= @subscription.meal_per_month %> </h5>
@@ -28,6 +29,7 @@
                   data-amount="<%= @subscription_order.amount_cents %>"
                   data-currency="<%= @subscription_order.amount.currency %>"></script>
               <% end %><a href="/subscriptions" class="btn btn-danger"><i class="icon-shopping-cart"></i>Modifier ma commande</a></p>
+              </div>
           </div>
         </div>
       </div>
