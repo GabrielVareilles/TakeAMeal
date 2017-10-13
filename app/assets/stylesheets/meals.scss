@@ -16,13 +16,26 @@
 .card-meal {
   margin-top: 10px;
   margin-bottom: 50px;
-  margin-left: 0px;
-  margin-right: 0px;
   width: 450px;
   margin-left: auto;
   margin-right: auto;
   // flex: 0 0 0%;
   // width: 500px;
+}
+
+.address {
+  padding-top: 50px;
+  color: black;
+  padding-right: 35px;
+}
+
+.address p {
+  margin: 0px;
+
+}
+
+.map-container {
+  background-color: #DFDFDF;
 }
 
 .shadow-card {
@@ -36,6 +49,18 @@
 @media(max-width: 770px) {
   .shadow-card {
     height: 115vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .address {
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-right: 0px;
+  }
+
+  .card-meal {
+
   }
 
 }
@@ -178,7 +203,6 @@
 
   .description {
   padding-left: 100px;
-  width: 400px;
   padding-right: 85px;
 }
 }
@@ -187,7 +211,6 @@
   .description{
     padding-top: 20px;
     text-align: center;
-    width: 560px;
     padding-bottom: 50px;
   }
 

@@ -29,7 +29,7 @@
 <div class="map-wrapper">
   <div class="map-container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 col-sm-8">
         <div id="map" style="height: 300px;"></div>
         <% content_for(:after_js) do %>
         <%= javascript_tag do %>
@@ -46,6 +46,15 @@
   });
   <% end %>
   <% end %>
+  </div>
+  <div class = "col-xs-12 col-sm-4">
+  <div class = "address text-center">
+    <h3><%=@restaurant.name%></h3>
+    <p><%=@restaurant.address%></p>
+    <p><%=@restaurant.post_code%></p>
+    <p><%=@restaurant.city%></p>
+    <p><%=@restaurant.phone_number%></p>
+  </div>
 </div>
 </div>
 </div>
@@ -56,7 +65,7 @@
       <div class="col-xs-12">
         <% if has_subscription? %>
         <% if @has_order %>
-        <div class = "col-xs-12 col-sm-offset-3 col-sm-2 col-md-offset-0 col-md-5">
+        <div class = "col-xs-12 col-sm-offset-0 col-sm-2 col-md-offset-0 col-md-5">
           <div class = "pick-card text-center">
             <h2>Vous avez déjà fait votre choix</h2>
             <div class = "pick-card-description">
@@ -65,7 +74,7 @@
           </div>
         </div>
         <% else %>
-        <div class = "col-xs-12 col-sm-offset-3 col-sm-2 col-md-offset-0 col-md-5">
+        <div class = "col-xs-12 col-sm-offset-0 col-sm-2 col-md-offset-0 col-md-5">
           <div class = "pick-card text-center">
             <h2> Pick-up </h2>
             <div class = "pick-card-description">
@@ -76,7 +85,7 @@
         </div>
         <% end %>
         <% else %>
-        <div class = "col-xs-12 col-sm-offset-3 col-sm-2 col-md-offset-0 col-md-5">
+        <div class = "col-xs-12 col-sm-offset-0 col-sm-2 col-md-offset-0 col-md-5">
           <div class = "pick-card text-center">
             <h2>Vous n'êtes pas actuellement abonné</h2>
             <div class = "pick-card-description">
