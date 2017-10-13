@@ -19,7 +19,11 @@
             <% else %>
               <h5> Valeur unitaire : 5,99 € </h5>
             <% end %>
-            <h4><b>Prix Total: <%= @subscription.price_cents %> €</b> </h4>
+            <% if @subscription.id == 1 %>
+              <h4><b>Prix Total: 76,8 €</b> </h4>
+            <% else %>
+              <h4><b>Prix Total: 119,8 €</b> </h4>
+            <% end %>
             <p> <%= form_tag subscriptions_order_payments_path(@subscription_order), method: 'post', id: 'payment-form' do %>
                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"

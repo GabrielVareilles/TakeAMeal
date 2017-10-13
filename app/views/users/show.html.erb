@@ -24,8 +24,8 @@
             <% @restaurant = Restaurant.find(@meal.restaurant_id) %>
             <p><b>Restaurant :  </b><%= @restaurant.name %></p>
             <p><b>Adresse :  </b><%= @restaurant.address %>,&nbsp;&nbsp;&nbsp;<%= @restaurant.post_code %>,&nbsp; <%= @restaurant.city %></p>
-            <p><b>Telephone :  </b><%= @restaurant.phone_number %></p>
-            <%= link_to 'annuler ma commande', meal_order_path(@order.meal, @order), method: :put, confirm: 'Are you sure?' %>
+            <p><b>Téléphone :  </b><%= @restaurant.phone_number %></p>
+            <%= link_to 'Annuler ma commande', meal_order_path(@order.meal, @order), method: :put, confirm: '' %>
           </div>
         </div>
       </div>
