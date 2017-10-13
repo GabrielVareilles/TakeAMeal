@@ -1,4 +1,10 @@
-<h2>Vous avez oublié votre mot de passe ?</h2>
+<div class="sign-in-wrapper">
+  <div id="jumbo" class="jumbotron" style="background: linear-gradient(135deg, rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= image_path('plat.jpg') %>');  background-repeat: no-repeat; background-position: center; background-size: cover; ">
+  <div class="container">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="formulaire">
+      <div class="text-center">
+        <h2 id="connection-title">Vous avez oublié votre mot de passe ?</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
@@ -13,3 +19,11 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+

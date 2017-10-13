@@ -9,10 +9,14 @@
       <div class="col-xs-12">
         <div class="sitemap">
           <div class="footer-links">
-            <a href="#">Accueil</a>
-            <a href="#">A propos</a>
-            <a href="#">Profil</a>
-            <a href="#">Contact</a>
+            <a><%= link_to "Accueil", restaurants_path%></a>
+            <a><%= link_to "A propos", restaurants_path%></a>
+            <% if user_signed_in? %>
+              <a><%= link_to "Profil", users_path(current_user.id)%></a>
+            <% else %>
+              <a><%= link_to "Profil", new_user_session_path%></a>
+            <% end %>
+            <a><%= link_to "Contact", restaurants_path%></a>
           </div>
         </div>
       </div>
