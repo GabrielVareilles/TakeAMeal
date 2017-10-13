@@ -24,7 +24,7 @@ class RestaurantsController < ApplicationController
     # authorize @restaurant
     if @restaurant == current_restaurant
       @meal = Meal.where(restaurant_id: @restaurant.id).first
-      @orders = Order.where(meal_id: @meal.id)
+      @orders = Order.where("created_at >= :start_time and meal_id = :meal", start_time: today_or_yesterday?, meal: @meal)
 
     else
       flash[:alert] = "You are not authorized to perform this action, BATERD."
@@ -47,5 +47,14 @@ class RestaurantsController < ApplicationController
 
   def find_restaurant
     @restaurant = Restaurant.find(params[:id])
+  end
+
+  def today_or_yesterday?
+    if DateTime.now <= DateTime.new(Date.today.year, Date.today.month, Date.today.day,15, 0, 0, "+02:00")
+      @start_time = DateTime.new(Date.today.year, Date.today.month, Date.today.day - 1, 17, 0, 0, "+02:00")
+    else
+      @start_time = DateTime.new(Date.today.year, Date.today.month, Date.today.day, 17, 0, 0, "+02:00")
+    end
+    @start_time
   end
 end
