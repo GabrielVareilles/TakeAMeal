@@ -5,12 +5,12 @@
 @import 'users/sign_in.scss';
 @import 'users/sign_up.scss';
 
-.row {
-  margin: 5px;
+.photo-show {
+  text-align: center;
 }
 
 .user-wrapper {
-  padding-top: 50px;
+  padding-top: 30px;
 
 }
 
@@ -21,17 +21,26 @@
 
 }
 
+#info-pack h3 {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
 .card-user {
   margin-top: 0px;
   margin-bottom: 10px;
-  // margin-left: 0px;
-  // margin-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
   text-align: left;
   display: flex;
   flex-direction: column;
 
   // flex: 0 0 0%;
   // width: 500px;
+}
+
+#special-row {
+  margin: 0px;
 }
 
 .card-user-info {
@@ -50,32 +59,34 @@
 
 .pack {
   // width: 450px;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
 }
 
 .pack-text p {
-  margin-bottom: 21px;
+  margin-bottom: 20px;
 }
 
-.pack-text {
-  padding-top: 20px;
-}
 
 #info-pack {
   width: 300px;
-  padding-left: 110px;
+  padding-left: 50px;
 }
 
 .card-user h2 {
-  margin-bottom: 30px;
+  margin-bottom: 45px;
   padding-left: 15px;
+  text-align: center;
 }
 
 .map {
   height: 300px;
 }
+
+// .show {
+//   width: 405.66px;
+// }
 
 .no-command h4 {
   font-size: 28px;
@@ -91,12 +102,13 @@
 
 .img-meal {
   margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media(max-width: 990px) {
   #info-pack {
-    padding-left: 25px;
-    width: 292px;
+    width: 300px;
   }
    .pack {
     margin-left: auto;
@@ -126,5 +138,24 @@
     margin-left: auto;
   }
 
+  .show {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  #info-pack {
+    padding-left: 0px;
+  }
 }
 
+// @media(min-width: 770px) {
+//   #info-pack {
+//     padding-top: 70px;
+//   }
+// }
+
+// @media(min-width: 990px) {
+//   .show {
+//     padding-top: 82px;
+//   }
+// }
