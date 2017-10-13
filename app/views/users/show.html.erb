@@ -8,15 +8,18 @@
       <div class = "col-xs-12">
         <div class = "card-user">
           <% if @has_order %>
-            <div class="row">
-              <h2> Ma commande </h2>
-            <div class = "col-xs-12 col-sm-8 col-sm-6 col-md-offset-0 col-md-6 col-lg-4">
+          <h2> Ma commande </h2>
+            <div id="special-row" class="row">
+            <div class = "col-xs-12 col-sm-7 col-md-6 col-lg-4">
+              <div class ="photo-show">
                 <% @meal = @order.meal %>
-                <div class="img-meal" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 350px; width: 400px;"></div>
+                <div class="img-meal" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 300px; width: 450px;"></div>
+              </div>
             </div>
-            <div class = "col-xs-12 col-sm-4 col-md-6 col-lg-4">
+            <div class = "col-xs-12 col-sm-5 col-md-6 col-lg-4">
               <div id="info-pack" class="pack">
-                <h4><b>Informations pratiques: </b></h4>
+                <h3><b>Informations pratiques: </b></h3>
+                <hr>
                 <div class="pack-text">
                   <p><b>Votre plat : </b><%= @order.meal.name %></p>
                   <p><b>Votre créneau : </b><%= @order.pick_up_time %></p>
@@ -30,7 +33,9 @@
               </div>
             </div>
             <div class ="col-xs-12 col-md-12 col-lg-4">
-              <div id="map" style="height: 300px;"></div>
+              <div class="show">
+                <div id="map" style="height: 300px;"></div>
+              </div>
                 <% content_for(:after_js) do %>
                   <%= javascript_tag do %>
                     var handler = Gmaps.build('Google');

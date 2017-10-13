@@ -9,6 +9,10 @@ class MealsController < ApplicationController
     @has_order = has_order?
     @restaurant = Restaurant.find(@meal.restaurant_id)
     @order = Order.new
+    @hash = Gmaps4rails.build_markers(@restaurant) do |restaurant, marker|
+        marker.lat restaurant.latitude
+        marker.lng restaurant.longitude
+      end
   end
 
   private
