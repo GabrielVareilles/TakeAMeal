@@ -16,7 +16,7 @@
 .card-meal {
   margin-top: 10px;
   margin-bottom: 50px;
-  width: 450px;
+  // width: 450px;
   margin-left: auto;
   margin-right: auto;
   // flex: 0 0 0%;
@@ -31,6 +31,7 @@
 
 .address p {
   margin: 0px;
+  margin-top: 10px;
 
 }
 
@@ -192,6 +193,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
 }
 
 @media(max-width: 990px) {
