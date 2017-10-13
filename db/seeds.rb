@@ -309,14 +309,14 @@ puts 'Finished'
 
 puts 'Creating Subscription'
 Subscription.create!(
-  name: "Offre decouverte",
+  name: "Petite Faim",
   meal_per_month: 12,
   price_cents: 76.8,
   stripe_id: "offre-decouverte"
 )
 
 Subscription.create!(
-  name: "Offre habitue",
+  name: "Faim de Loup",
   meal_per_month: 20,
   price_cents: 119.8,
   stripe_id: "offre-habitue"
