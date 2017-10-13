@@ -1,63 +1,37 @@
-<div class="page-content">
+<div class="page-content" >
+
   <div id="payment-container" class="container">
+  <h1>Récapitulatif de votre commande</h1>
     <div class="row">
-      <div class="col-md-8 col-sm-8 single-item">
+      <div class="col-md-12 col-sm-12 text-center">
         <div class="row">
-          <div class="col-md-5 col-sm-5">
-
-            <div id="itemsingle" class="carousel slide clearfix img-responsive" style="background: url(https://www.petitfute.com/medias/mag/10734/835/7727-10-le-coq-au-vin-quoi.jpg); background-position: center; background-size: cover; background-repeat: no-repeat; height: 220px; width: 380px; margin-left: 0px; margin-top: 30px;">
+          <div class="col-md-6 col-sm-6 text-center">
+            <div id="itemsingle" class="carousel slide clearfix img-responsive" style="background: url(https://www.petitfute.com/medias/mag/10734/835/7727-10-le-coq-au-vin-quoi.jpg); background-position: center; background-size: cover; background-repeat: no-repeat; height: 300px; width: 450px; margin-left: 0px; margin-top: 0px;">
             </div>
-
           </div>
-          <div class="col-md-7 col-sm-7 recap">
-            <h3>Récapitulatif de votre commande</h3>
+          <div class="col-md-6 col-sm-6">
+            <div class="recap">
             <% @subscription = Subscription.find(@subscription_order.subscription_id)%>
-            <h4> <%= @subscription.name %> </h4>
+            <h3> <b><%= @subscription.name %></b></h3>
             <h5> Nombre de repas : <%= @subscription.meal_per_month %> </h5>
             <% if @subscription.id == 1 %>
-              <h5> Valeur unitaire : 6,39€ </h5>
+              <h5> Valeur unitaire : 6,39 € </h5>
             <% else %>
-              <h5> Valeur unitaire : 5,99€ </h5>
+              <h5> Valeur unitaire : 5,99 € </h5>
             <% end %>
-            <h4><b>Prix Total: <%= @subscription.price_cents %>€</b> </h4>
-            <p><a href="#" class="btn btn-danger"><i class="icon-shopping-cart"></i> Modifier ma commande</a></p>
+            <h4><b>Prix Total: <%= @subscription.price_cents %> €</b> </h4>
+            <p> <%= form_tag subscriptions_order_payments_path(@subscription_order), method: 'post', id: 'payment-form' do %>
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-name="Ma commande"
+                  data-email="<%= current_user.email %>"
+                  data-description="Commande: <%= @subscription.name %>"
+                  data-amount="<%= @subscription_order.amount_cents %>"
+                  data-currency="<%= @subscription_order.amount.currency %>"></script>
+              <% end %><a href="/subscriptions" class="btn btn-danger"><i class="icon-shopping-cart"></i>Modifier ma commande</a></p>
+              </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-4">
-        <div class="row sidebar">
-          <div class="col-md-12">
-            <h3>Validation du paiement</h3>
-            <div class="quick-search">
-              <%= form_tag subscriptions_order_payments_path, method: 'post', id: 'payment-form' do %>
-                <span class="payment-errors"></span>
-                <div class="form-row">
-                  <label>
-                    <span>Numéro de carte</span>
-                    <input type="text" size="20" data-stripe="number"/>
-                  </label>
-                </div>
-                <div class="form-row">
-                  <label>
-                    <span>Expiration </span>
-                    <input type="text" size="3" data-stripe="exp-month" placeholder="MM" />
-                  </label>
-                    <span>/</span>
-                    <input type="text" size="5" data-stripe="exp-year" placeholder="AAAA"/>
-                </div>
-                <div class="form-row">
-                  <label>
-                    <span>CVC</span>
-                    <input type="text" size="4" data-stripe="cvc"/>
-                  </label>
-                </div>
-                <button type="submit" class="btn btn-primary">Confirmer Paiement</button>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
-
