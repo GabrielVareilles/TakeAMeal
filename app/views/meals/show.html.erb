@@ -2,7 +2,7 @@
 
 <div class="meal-wrapper">
     <div class="meal-container">
-      <div class="row">
+      <div id="rowfoo" class="row">
           <div class="col-xs-12">
             <div class="shadow-card">
             <div class = " col-xs-12 col-sm-7 col-lg-7 ">
@@ -28,7 +28,7 @@
   </div>
 <div class="map-wrapper">
   <div class="map-container">
-    <div class="row">
+    <div id="rowfoo" class="row">
       <div class="col-xs-12 col-sm-8">
         <div id="map" style="height: 300px;"></div>
         <% content_for(:after_js) do %>
@@ -61,7 +61,7 @@
 </div>
 <div class="meal-wrapper" id= "order">
   <div class="meal-container">
-    <div class="row">
+    <div id="rowfoo" class="row">
       <div class="col-xs-12">
         <% if has_subscription? %>
         <% if @has_order %>

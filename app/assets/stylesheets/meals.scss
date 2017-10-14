@@ -9,6 +9,12 @@
   margin-top: 30px;
 }
 
+#rowfoo {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+
+}
+
 .meal-wrapper {
   background-color: rgba(242, 243, 234, 0.2);
 }
@@ -40,7 +46,7 @@
 }
 
 .shadow-card {
-  height: 70vh;
+  height: 450px;
   margin-top: 30px;
   margin-bottom: 20px;
   box-shadow: 1px 1px 1px grey;
@@ -49,7 +55,7 @@
 
 @media(max-width: 770px) {
   .shadow-card {
-    height: 115vh;
+    height: 762px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -214,6 +220,7 @@
     padding-top: 20px;
     text-align: center;
     padding-bottom: 50px;
+    width: 400px;
   }
 
 }
