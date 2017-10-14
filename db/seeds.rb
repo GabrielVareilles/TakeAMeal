@@ -160,7 +160,7 @@ User.create!(
   phone_number: "06 89 83 79 52",
   email: "valendtinleblan@gmail.com",
   encrypted_password: "episd",
-  password: "epicure",3
+  password: "epicure",
   company: "Take a Meal",
   post_code: "59000",
 )
