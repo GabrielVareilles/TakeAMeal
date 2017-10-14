@@ -8,25 +8,24 @@
 puts 'Creating restaurants...'
 r = Restaurant.create!(
   name:         "Epicure au Bristol",
-  address:      "112 rue du Fg St-Honoré",
+  address:      "25 rue Turgot",
   address2: "",
   email: "epicdure@gmail.com",
   encrypted_password: "epicure",
   password: "epicure",
   phone_number: "+33 6 89 83 79 52",
-  category: "Francais",
+  category: "Français",
   max_meal: 15,
   city: "Lille",
   post_code: "59000",
-  latitude: 50.630815,
-  longitude: 3.058123
+
 )
 r.remote_photo_url = "https://www.cote2boeuf.fr/le-blog/wp-content/uploads/2016/09/IMG_7813.jpg"
 r.save
 
 r = Restaurant.create!(
   name:         "La truffière",
-  address:      "4 rue Blainville",
+  address:      "35 Avenue de Bretagne",
   address2: "",
   email: "truffidere@gmail.com",
   encrypted_password: "epicurtt",
@@ -36,14 +35,13 @@ r = Restaurant.create!(
   max_meal: 20,
   city: "Lille",
   post_code: "59000",
-  latitude: 51.630815,
-  longitude: 4.058123
+
 )
 r.remote_photo_url = "http://lesgrappes.leparisien.fr/wp-content/uploads/2015/12/16821015905_2b6b543f91_c-compressor.jpg"
 r.save
 r = Restaurant.create!(
   name:         "Le pré catelan",
-  address:      "route de Suresnes 75016 Paris",
+  address:      "30 rue des Templiers",
   address2: "",
   email: "catdelan@gmail.com",
   encrypted_password: "epicwweurtt",
@@ -53,31 +51,29 @@ r = Restaurant.create!(
   max_meal: 10,
   city: "Lille",
   post_code: "59000",
-  latitude: 52.630815,
-  longitude: 5.058123
+
 )
 r.remote_photo_url = "http://static.cuisineaz.com/680x357/i67198-specialites-basques.jpg"
 r.save
 r = Restaurant.create!(
   name:         "Chez Jacques",
-  address:      "12 Allee du Paradis",
+  address:      "12 rue Gallieni",
   address2: "",
   email: "jacques@gmail.com",
   encrypted_password: "paradise",
   password: "epicure",
   phone_number: "+33 6 89 83 72 52",
-  category: "Francais",
+  category: "Français",
   max_meal: 15,
   city: "Lille",
   post_code: "59000",
-  latitude: 53.630815,
-  longitude: 6.058123
+
 )
 r.remote_photo_url = "https://image.afcdn.com/recipe/20141014/47748_w420h344c1cx800cy800.jpg"
 r.save
 r = Restaurant.create!(
   name:         "Chez Alphonse",
-  address:      "20 bis rue Inkermann",
+  address:      "20 rue Jacquart",
   address2: "",
   email: "20bis@gmail.com",
   encrypted_password: "attention",
@@ -87,14 +83,13 @@ r = Restaurant.create!(
   max_meal: 20,
   city: "Lille",
   post_code: "59000",
-  latitude: 54.630815,
-  longitude: 7.058123
+
 )
 r.remote_photo_url = "https://www.atelierdeschefs.com/media/recette-e15183-salade-grecque.jpg"
 r.save
 r = Restaurant.create!(
   name:         "New Delhi",
-  address:      "Rue de la Pompe",
+  address:      "30 rue Philippe de Girard",
   address2: "",
   email: "lapompe@gmail.com",
   encrypted_password: "pompage",
@@ -104,31 +99,29 @@ r = Restaurant.create!(
   max_meal: 10,
   city: "Lille",
   post_code: "59000",
-  latitude: 55.630815,
-  longitude: 8.058123
+
 )
 r.remote_photo_url = "http://storenotrefamilleprod.blob.core.windows.net/images/cms/recette/13314/13314_large.jpg"
 r.save
 r = Restaurant.create!(
   name:         "La Fumeuse",
-  address:      "112 rue du Fg St-Honoré",
+  address:      "29 rue Winston Churchill",
   address2: "",
   email: "epicdurde@gmail.com",
   encrypted_password: "epicure",
   password: "epicure",
   phone_number: "+33 6 89 83 79 52",
-  category: "Francais",
+  category: "Français",
   max_meal: 15,
   city: "Lille",
   post_code: "59000",
-  latitude: 59.630815,
-  longitude: 10.058123
+
 )
 r.remote_photo_url = "http://img.taste.com.au/vOr3IetI/taste/2016/11/pea-and-brie-quiche-80007-1.jpeg"
 r.save
 r = Restaurant.create!(
   name:         "Samourai",
-  address:      "4 rue Blainville",
+  address:      "2 rue des Bois Blancs",
   address2: "",
   email: "truffidssewre@gmail.com",
   encrypted_password: "epicurtt",
@@ -138,14 +131,13 @@ r = Restaurant.create!(
   max_meal: 20,
   city: "Lille",
   post_code: "59000",
-  latitude: 60.630815,
-  longitude: 11.058123
+
 )
 r.remote_photo_url = "https://eatzer.com/wp-content/uploads/2016/09/awesome-sushi-720x513.jpg"
 r.save
 r = Restaurant.create!(
   name:         "Tokyo Palace",
-  address:      "route de Suresnes 75016 Paris",
+  address:      "25 rue Hegel",
   address2: "",
   email: "catdwesslan@gmail.com",
   encrypted_password: "epicwweurtt",
@@ -155,8 +147,7 @@ r = Restaurant.create!(
   max_meal: 10,
   city: "Lille",
   post_code: "59000",
-  latitude: 61.630815,
-  longitude: 12.058123
+
 )
 r.remote_photo_url = "https://thesushistation.files.wordpress.com/2015/08/wpid-img_6245.jpg"
 r.save
@@ -169,7 +160,7 @@ User.create!(
   phone_number: "06 89 83 79 52",
   email: "valendtinleblan@gmail.com",
   encrypted_password: "episd",
-  password: "epicure",
+  password: "epicure",3
   company: "Take a Meal",
   post_code: "59000",
 )
