@@ -26,12 +26,12 @@ class MealsController < ApplicationController
   end
 
   def kitchen_open?
-    @eleven_am = Time.new(Date.today.year, Date.today.month, Date.today.day, 11, 0, 0, '+02:00')
-    @five_pm = Time.new(Date.today.year, Date.today.month, Date.today.day, 17, 0, 0, '+02:00')
-    @time = Time.now
-    if @time >= @eleven_am && @time <= @five_pm
-      return false
-    end
+    # @eleven_am = Time.new(Date.today.year, Date.today.month, Date.today.day, 11, 0, 0, '+02:00')
+    # @five_pm = Time.new(Date.today.year, Date.today.month, Date.today.day, 17, 0, 0, '+02:00')
+    # @time = Time.now
+    # if @time >= @eleven_am && @time <= @five_pm
+    #   return false
+    # end
     true
   end
 
