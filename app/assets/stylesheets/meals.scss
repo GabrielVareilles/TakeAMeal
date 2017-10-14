@@ -1,5 +1,9 @@
 @import 'components/restaurantbanner.scss';
 
+html, body {
+  overflow-x: hidden;
+}
+
 #meals-text h1 {
   border-bottom: none;
 }
@@ -119,12 +123,6 @@
   align-items: center;
 }
 
-// .row {
-//   // width: 100%;
-//   margin: 0;
-//   width: 90%
-// }
-
 .meal-container {
   display: flex;
   justify-content: space-around;
@@ -216,6 +214,11 @@
     padding-bottom: 50px;
   }
 
+}
+
+#rowfoo {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .closed-container {

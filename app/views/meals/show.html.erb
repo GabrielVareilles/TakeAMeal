@@ -1,31 +1,29 @@
 <%= render "components/restaurantbanner" %>
 
 <div class="meal-wrapper">
-    <div class="meal-container">
-      <div class="row">
-          <div class="col-xs-12">
-            <div class="shadow-card">
-            <div class = " col-xs-12 col-sm-7 col-lg-7 ">
-              <div class = "card-meal">
-                <h2> Voici le plat du jour ! </h2>
-                <div class="img-meal img-responsive" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 300px; width: 400px;">
-                </div>
-              </div>
+  <div class="meal-container">
+    <div class="row">
+      <div class="shadow-card">
+        <div class = " col-xs-12 col-sm-7 col-lg-7 ">
+          <div class = "card-meal">
+            <h2> Voici le plat du jour ! </h2>
+            <div class="img-meal img-responsive" style="background: url('<%=@meal.photo%>'); background-position: center; background-size: cover; background-repeat: no-repeat; height: 300px; width: 400px;">
             </div>
-            <div class ="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-5 col-lg-5">
-              <div class = "description">
-                <h3><%= @meal.name %></h3>
-                <hr>
-                <h4> Description</h4>
-                <p><%= @meal.description %></p>
-                <p><a class="btn btn-primary btn-lg" href="#order" role="button">Choisir ce plat</a></p>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div class ="col-xs-offset-0 col-xs-12 col-sm-offset-0 col-sm-5 col-lg-5">
+          <div class = "description">
+            <h3><%= @meal.name %></h3>
+            <hr>
+            <h4> Description</h4>
+            <p><%= @meal.description %></p>
+            <p><a class="btn btn-primary btn-lg" href="#order" role="button">Choisir ce plat</a></p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 <div class="map-wrapper">
   <div class="map-container">
     <div class="row">
@@ -46,8 +44,8 @@
   });
   <% end %>
   <% end %>
-  </div>
-  <div class = "col-xs-12 col-sm-4">
+</div>
+<div class = "col-xs-12 col-sm-4">
   <div class = "address text-center">
     <h3><%=@restaurant.name%></h3>
     <p><%=@restaurant.address%></p>

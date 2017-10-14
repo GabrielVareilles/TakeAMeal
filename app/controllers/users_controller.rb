@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
+    @user_subscription = SubscriptionOrder.where(user_id: current_user.id, state: "paid").last
   end
 
   def index

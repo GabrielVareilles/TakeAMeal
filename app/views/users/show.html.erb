@@ -101,11 +101,11 @@
     <table class="table table-hover">
       <tr>
         <th>type d'abonnement</th>
-        <th>Lorem Ipsum</th>
+        <th><%= @user_subscription.subscription.name %></th>
       </tr>
       <tr>
         <td>prochaine échéance</td>
-        <td>22 Novembre 2017</td>
+        <td><%= @user_subscription.end_date %></td>
       </tr>
       <tr>
         <td>Nombre de plats restant ce mois-ci</td>
