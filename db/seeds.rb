@@ -6,12 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Review.destroy_all
-Order.destroy_all
-Subscription.destroy_all
-Meal.destroy_all
-Restaurant.destroy_all
-User.destroy_all
+class ActiveRecord::Base
+  def self.truncate!
+    connection.execute("TRUNCATE #{table_name} RESTART IDENTITY CASCADE;")
+  end
+end
+
+[
+  Review,
+  Order,
+  Subscription,
+  Meal,
+  Restaurant,
+  User
+].map(&:truncate!)
 
 puts 'Creating restaurants...'
 r = Restaurant.create!(
